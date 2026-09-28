@@ -1,0 +1,2878 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link href="/CloudilyaUnited/css/neumorphic.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+
+    <link rel="stylesheet" href="/CloudilyaUnited/css/site.css">
+    <!-- Include AllButtonCommonCode.css -->
+    <link rel="stylesheet" href="/CloudilyaUnited/css/AllButtonCommonCode.css">
+    <link rel="icon" type="image/png" href="/CloudilyaUnited/favicon.ico" />
+    <link rel="shortcut icon" href="/CloudilyaUnited/favicon.ico" />
+
+    <style>
+        body {
+            background-image: url("C:\Users\ksaikumar\Downloads\backimg.jpg") !important;
+            background-size: cover;
+        }
+   
+        .title-content {
+            font-size: 16px;
+        }
+
+        #bodyLogin {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #343434;
+        }
+
+        .neumorphic-login-container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .neumorphic-card {
+            background-color: #e7ecee;
+            width: 400px;
+            height: auto;
+            margin: 1rem;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 10px 10px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        .neumorphic-card__header {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .neumorphic-form {
+            margin: 2rem 0;
+        }
+
+        .neumorphic-input-wrapper {
+            width: 100%;
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+         .neumorphic-input-wrapper label {
+             font-size: 0.9rem;
+             font-weight: 400;
+             margin-left: 0.8rem;
+         }
+
+         .neumorphic-input-wrapper input {
+             border: none;
+             outline: none;
+             background: none;
+             background-color: white;
+             padding: 0.8rem 1.1rem;
+             border-radius: 15px;
+             margin: 0.5rem 0 1rem 0;
+             font-size: 1rem;
+             color: black;
+             height: 45px;
+             box-shadow: inset 5px 5px 11px white, inset -5px -5px 11px white;
+         }
+
+        .neumorphic-form button {
+            border: none;
+            outline: none;
+            background: none;
+            width: 100%;
+            margin: 0.6rem 0 1rem 0;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: white;
+            text-transform: capitalize;
+            padding: 0.9rem;
+            border-radius: 15px;
+            background-color: #2065ef;
+            height: 45px;
+            box-shadow: 10px 10px 22px white, -10px -10px 22px white;
+        }
+
+         .neumorphic-form button:active {
+             box-shadow: inset 5px 5px 11px rgba(0, 0, 0, 0.2), inset -5px -5px 11px rgba(231, 235, 236, 0.75);
+         }
+
+        .neumorphic-card__footer p {
+            text-align: center;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .neumorphic-card__footer a {
+            text-decoration: none;
+            color: rgb(216, 30, 30);
+        }
+
+         .neumorphic-card__footer a:hover {
+             text-decoration: underline;
+         }
+
+        #neumorphic-input-wrapper1 {
+            position: relative;
+            display: inline-block;
+        }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+            cursor: pointer;
+            top: 60px;
+            font-size: 18px;
+        }
+        /* //--------------------------OTP DESIGN-------------//*/
+        .height-100 {
+            height: 100vh
+        }
+
+        #Otpcard {
+            width: 400px;
+            border: none;
+            height: 300px;
+            box-shadow: 0px 5px 20px 0px #d2dae3;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+            #Otpcard h6 {
+                color: red;
+                font-size: 20px
+            }
+
+        .inputs input {
+            width: 40px;
+            height: 40px
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0
+        }
+
+        .card-2 {
+            background-color: #fff;
+            padding: 10px;
+            width: 350px;
+            height: 100px;
+            bottom: -50px;
+            left: 20px;
+            position: absolute;
+            border-radius: 5px
+        }
+
+            .card-2 .content {
+                margin-top: 50px
+            }
+
+                .card-2 .content a {
+                    color: red
+                }
+
+        .form-control:focus {
+            box-shadow: none;
+            border: 2px solid red
+        }
+
+        .validate {
+            border-radius: 20px;
+            height: 40px;
+            background-color: red;
+            border: 1px solid dodgerblue;
+            width: 140px
+        }
+
+        #btn_resend a:hover {
+            text-decoration: underline;
+        }
+
+        #err_confirmvalidation, #err_confirmvalidation1, #span_Loginpassword {
+            vertical-align: middle;
+            color: red;
+            text-align: center;
+            margin-left: 7px;
+            font-size: 15px;
+        }
+
+        #span_ApplicationNo {
+            vertical-align: middle;
+            color: red;
+            text-align: start;
+            font-size: 15px;
+        }
+
+        .spinner-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999; /* Ensure the spinner is above other content */
+        }
+
+
+        #ReviewTableQual .table td, #ReviewTableEntrance .table td, #ReviewTableBranch .table td {
+            text-align: center;
+            /* padding: 7px;*/
+        }
+
+        #ReviewTableQual tr td, #ReviewTableEntrance tr td, #ReviewTableBranch tr td {
+            vertical-align: text-top;
+        }
+
+        #ReviewTableQual th, #ReviewTableEntrance th, #ReviewTableBranch th {
+            text-align: center;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        #ReviewTableQual tbody tr td, #ReviewTableEntrance tbody td, #ReviewTableBranch tbody td {
+            text-align: center;
+            /*  border-collapse: collapse;*/
+            border-color: white;
+            border: 1px white;
+        }
+
+        .table-container {
+            max-width: 300%; /* Set your desired width */
+            overflow-x: auto; /* Add horizontal scroll */
+        }
+
+        .table-container1 {
+            width: 103%; /* Set your desired width */
+            overflow-x: auto; /* Add horizontal scroll */
+        }
+
+        .table > :not(caption) > * > * {
+            padding: 0.01rem 0.01rem !important;
+            background-color: var(--bs-table-bg);
+            border-bottom-width: 1px !important;
+            box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg) !important;
+        }
+
+        .green-text {
+            color: green !important; /* Set the color to green */
+        }
+
+        .custom-confirm-button {
+            font-size: 16px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            display: none;
+        }
+
+        .table td {
+            text-align: center;
+            padding: 7px;
+        }
+
+        .table th {
+            background-color: #3599ca;
+            color: #fff;
+            font-size: large;
+        }
+
+        .CartBtn {
+            width: 100%;
+            height: 35px;
+            border-radius: 5px;
+            border: none;
+            background-color: dodgerblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition-duration: .5s;
+            overflow: hidden;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+            position: relative;
+            margin-right: 3px;
+        }
+
+        .IconContainer {
+            position: absolute;
+            left: -50px;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 2;
+            transition-duration: .5s;
+        }
+
+        .cart {
+            border-radius: 1px;
+            width: 17px;
+            height: 17px;
+            color: white;
+        }
+
+        .text {
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            z-index: 1;
+            transition-duration: .5s;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 17px;
+        }
+
+        .CartBtn:hover .IconContainer {
+            transform: translateX(58px);
+            border-radius: 40px;
+            transition-duration: .5s;
+        }
+
+        .CartBtn:hover .text {
+            transform: translate(10px,0px);
+            transition-duration: .5s;
+        }
+
+        .CartBtn:active {
+            transform: scale(0.95);
+            transition-duration: .5s;
+        }
+
+        .saveHide {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .custom-style {
+            border: 2px solid gray; /* Set the border color to gray */
+            background-color: darkblue; /* Set the background color to a light gray shade */
+            padding: 1px; /* Optional: Add padding for better visual appearance */
+            color: white;
+            text-decoration: line-through;
+        }
+
+        #loadingSpinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999; /* Adjust the z-index as needed */
+        }
+
+        #body1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            margin: 0;
+            padding: 70px; /* Add padding to create space around the card */
+        }
+
+        #card1 {
+            width: 900px; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            min-height: 600px; /* Automatically adjusts height based on content */
+            max-height: 2000px; /* Example maximum height */
+            overflow-y: auto; /* Add scrollbars if content exceeds max height */
+        }
+
+        #body2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+            margin: 0;
+            padding: 50px; /* Add padding to create space around the card */
+        }
+
+        #card2 {
+            width: 800px; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #body3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh; /* Fallback height if neither min-height nor max-height is reached */
+            margin: 0;
+            padding: 70px; /* Add padding to create space around the card */
+        }
+
+        #card3 {
+            width: 1000px; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            min-height: 550px; /* Example minimum height */
+            max-height: 750px; /* Example maximum height */
+            overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+        }
+
+        #body4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+            margin: 0;
+            padding: 50px; /* Add padding to create space around the card */
+        }
+
+        #card4 {
+            width: 820px; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #body5 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85vh;
+            margin: 0;
+            padding: 50px; /* Add padding to create space around the card */
+        }
+
+
+        #card5 {
+            width: 600px; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #dynamicTable1 {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #dynamicTable1, th, td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        #container {
+            display: flex;
+            text-align: center;
+        }
+
+        .error-container {
+            display: inline-block; /* Align error container inline with the form element */
+            margin-left: 10px; /* Adjust the margin as needed for proper spacing */
+            vertical-align: top; /* Align the error container with the top of the form element */
+        }
+
+        #loadingSpinner {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999; /* Adjust the z-index as needed */
+        }
+
+        #body6 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 75vh;
+            margin: 0;
+            padding: 50px; /* Add padding to create space around the card */
+        }
+
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+            .password-container input[type="password"] {
+                width: 100%;
+                padding-right: 40px; /* Space for the icon */
+            }
+
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 100%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #333;
+            font-size: 1rem;
+        }
+
+
+        #card6 {
+            width: 820px; /* Adjust width as needed */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            min-height: 1800px; /* Example minimum height */
+            max-height: 3050px; /* Example maximum height */
+            overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+            margin-top: 1350px;
+        }
+
+        #ReviewTable td, #ReviewTableBranch td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+            #ReviewTable td:first-child {
+                text-align: center; /* Aligns the content of the first column to the right */
+                font-weight: bold;
+            }
+
+        .searchbtnyellow, .btnApplys {
+            display: flex;
+            justify-content: center;
+            height: 30px;
+            width: 100px;
+        }
+
+        .searchbtnyellow1, .btnApplys {
+            display: flex;
+            justify-content: center;
+            height: 30px;
+            width: 150px;
+        }
+
+        #ReviewTableQual {
+            width: 300%;
+        }
+
+        #ReviewTableEntrance {
+            width: 150%;
+        }
+
+        #ReviewTableBranch {
+            width: 97%;
+        }
+
+        #ReviewTable {
+            width: 97%;
+        }
+
+        #mainTableFee {
+            width: 100%;
+        }
+        /* Media query for devices with a maximum width of 600 pixels */
+        @media only screen and (max-width: 601px) {
+            .col-sm-4 {
+                text-align: left;
+            }
+
+            .col-sm-2 {
+                width: 50%;
+            }
+
+            .table-container {
+                width: 110%; /* Ensure container takes full width */
+                margin-left: -10px;
+            }
+
+            .table-container1 {
+                width: 125%; /* Set your desired width */
+                overflow-x: auto; /* Add horizontal scroll */
+            }
+
+            #ReviewTableQual {
+                width: 600%;
+            }
+
+            #ReviewTableEntrance {
+                width: 250%;
+            }
+
+            #ReviewTable {
+                width: 100%;
+            }
+
+            #mainTableFee {
+                width: 250%;
+            }
+
+            #body6 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 85vh;
+                margin: 0;
+                padding: 5px; /* Add padding to create space around the card */
+            }
+
+            #card {
+                width: 3500px; /* Adjust width as needed */
+                padding: 20px;
+                background-color: #f0f0f0;
+                border-radius: 8px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                min-height: 600px; /* Automatically adjusts height based on content */
+                max-height: 3000px; /* Example maximum height */
+                overflow-y: auto; /* Add scrollbars if content exceeds max height */
+            }
+
+            .btn_container {
+                justify-content: flex-end;
+            }
+        }
+
+        /* Media query for devices with a minimum width of 601 pixels */
+        @media only screen and (min-width: 601px) {
+            .col-sm-4 {
+                text-align: left;
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: blue;
+            }
+
+            50% {
+                color: red;
+            }
+
+            100% {
+                color: blue;
+            }
+        }
+
+        #View_Fee h5 {
+            text-decoration: underline;
+            color: blue;
+            animation: colorChange 2s infinite;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div b-cqqahxd073>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IE7FjH-whtJgnPhvqAD4Oj4bPVbMRL1HkxS0zlyNsj059BbJb73xCEtnfLPKIm5lcp4Dk1BD9YsJ9pmj1NUhQmhhz921RwTH2htuutqWDzP4qkZYYtclM6fKlURxrIr4M_M2mYrDGit23EHqMa6bBc" />
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+<html lang="en" hac>
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="enc-key" content="b7e151628aed2a6abf7158809cf4f3c762e7160f38b4da56a78e3b8e3ae59cba" />
+    <title>BeeSERP Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/CloudilyaUnited/images/Logo123.png">
+
+    <link href="/CloudilyaUnited/css/stylesheet1.css" rel="stylesheet" />
+    <link href="/CloudilyaUnited/lib/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="/CloudilyaUnited/css/loginpagestyles.css?v=504911430000000000" rel="stylesheet" />
+
+</head>
+
+<body oncontextmenu="return false;">
+    <div class="beeserp-login-wrapper position-relative">
+
+        <!-- Fixed margin-left syntax -->
+
+        <div class="beeserp-login-left-panel" style="background: url('/CloudilyaUnited/images/loginhome.png')
+center/cover no-repeat scroll !important;
+">
+        </div>
+
+        <div class="beeserp-login-right-panel">
+
+            <div id="otpLoader" class="custom-loader" style="display: none;" role="status">
+                <div class="loader-content">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+            <!-- White Card Background -->
+            <div id="loadingOverlay" class="overlay d-none">
+                <div class="spinner"></div>
+            </div>
+
+            <input type="text" id="userid" hidden />
+            <input type="hidden" id="RememberMeEnabled" value="true" />
+            <!------------------------- Login form -------------------->
+            <div class="beeserp-login-card" id="loginFormMain">
+                <img src="https://beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/CollegeLogos/nnrg0001/loginlogo.jpg"
+                     alt="Logo"
+                     class="logo-top rounded-1"
+                     onerror="this.onerror=null; this.src='/CloudilyaUnited/images/beeslogo.jpg';" />
+                <p class="beeserp-login-title">Login</p>
+                <form method="post" id="loginFormElement" role="form" autocomplete="off" action="/CloudilyaUnited/Login/Login">
+                    
+                    <div class="beeserp-input-wrapper">
+                        <label>User Name</label>
+                        
+                            <input type="text" name="UserName" id="txt_UserName" class="form-control" required autocomplete="off" placeholder="Username" value="">
+                            <span class="text-danger err-username d-none">please enter the username</span>
+                        
+                        
+                        
+                    </div>
+                    <div class="beeserp-input-wrapper">
+
+                        <label>Password</label>
+
+                        <input type="password" name="password" id="txt_Password" required class="form-control" autocomplete="new-password" placeholder="Password" value="" style="padding-right: 45px;">
+                            <span class="text-danger err-password d-none">please enter the password</span>
+                        
+                        
+                           
+                        
+                        <div class="beeserp-toggle-password">
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                        <div class="beeserp-remember-section">
+                            <label class="beeserp-toggle-switch">
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+                                <span class="beeserp-slider"></span>
+                            </label>
+                            <span style="font-weight: 500;">Remember Me</span>
+                        </div>
+                    <div class="form-group form-check">
+                        <div id="forgotPasswordLoader" class="spinner-border text-primary mt-1 ml-4" style="display: none;margin-left:100px;" role="status">
+                            <span class="sr-only">Processing...</span>
+                        </div>
+                    </div>
+                    <label for="myValue" style="vertical-align: middle; color: red;text-align: center;" id="span_invalid"></label>
+                    <button type="submit" id="btn_Login" class="beeserp-login-btn">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </button>
+                    <a href="#" class="beeserp-forgot-link" id="btn_forgot">
+                        <i class="fas fa-question-circle me-1"></i>Forgot Password?
+                    </a>
+                    <div class="text-center mt-2">
+                        <a href="https://nnrg.beessoftware.cloud/Cloudilyadvsregistration/"
+                           target="_blank"
+                           title="Click to open DVS registration"
+                           style="color: #ffffff;font-weight: 500; text-decoration: underline; cursor: pointer;">
+                            DVS registration
+                        </a>
+                    </div>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IE7FjH-whtJgnPhvqAD4Oj4bPVbMRL1HkxS0zlyNsj059BbJb73xCEtnfLPKIm5lcp4Dk1BD9YsJ9pmj1NUhQmhhz921RwTH2htuutqWDzP4qkZYYtclM6fKlURxrIr4M_M2mYrDGit23EHqMa6bBc" /></form>
+                <img src="/CloudilyaUnited/images/cloud.png" alt="CloudLiya Logo" class="logo-bottom">
+
+                <!-- Mobile App Download Section -->
+                <div class="mobile-app-inline">
+                    <div class="app-title">Get Cloudliya Mobile App</div>
+
+
+                    <div class="store-buttons">
+                        <!-- Google Play -->
+                        <a href="https://play.google.com/store/apps/details?id=com.beessoftware.cloudilyaEmployee.cloudilyaemployee"
+                           class="store-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg class="store-icon" viewBox="0 0 512 512" width="22" height="22" aria-label="Google Play">
+                                <g>
+                                    <path fill="#00A0FF"
+                                          d="M48 56v400c0 17.7 18.8 28.9 34.2 20.3l206.4-206.4L82.2 35.7C66.8 27.1 48 38.3 48 56z" />
+                                    <path fill="#00E676"
+                                          d="M345.6 316.8l-57.6-57.6-57.6 57.6 57.6 57.6z" />
+                                    <path fill="#FFEA00"
+                                          d="M400.4 256c0-8.4-4.4-16.1-11.6-20.4l-77.6-44.8-69.2 69.2 69.2 69.2 77.6-44.8c7.2-4.3 11.6-12 11.6-20.4z" />
+                                    <path fill="#FF3D00"
+                                          d="M82.2 476.3l206.4-206.4-57.6-57.6L82.2 476.3z" />
+                                </g>
+                            </svg>
+
+
+
+                            <div class="text">
+                                <div class="line1">GET IT ON</div>
+                                <div class="line2">Google Play</div>
+                            </div>
+                        </a>
+
+
+                        <!-- App Store -->
+                        <a href="https://apps.apple.com/in/app/cloudilya-empower/id6742535808"
+                           class="store-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg class="store-icon" viewBox="0 0 384 512" width="22" height="22" aria-label="App Store">
+                                <path fill="#ffffff" d="M318.7 268.6c-.4-44.9 36.6-66.4 38.3-67.4-20.9-30.6-53.5-34.8-65.1-35.3-27.7-2.8-54.1 16.4-68.2 16.4-14 0-35.8-16-58.8-15.6-30.2.5-58 17.6-73.6 44.8-31.4 54.5-8 135.2 22.6 179.4 15 21.6 32.9 45.9 56.4 45 22.7-.9 31.3-14.7 58.8-14.7s35.3 14.7 59.3 14.3c24.6-.4 40.1-22.4 55-44.1 17.2-25.1 24.3-49.4 24.6-50.7-.5-.2-47.2-18.1-47.7-71.1zM259.6 93.7c12.5-15.1 20.9-36.1 18.6-57.1-18 .7-39.7 12-52.6 27.1-11.6 13.3-21.8 34.7-19 55.1 20.1 1.6 40.5-10.3 53-25.1z" />
+                            </svg>
+
+                            <div class="text">
+                                <div class="line1">Download on the</div>
+                                <div class="line2">App Store</div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="neumorphic-card" id="logincardconfirm">
+                <div class="neumorphic-card__header">Set new password</div>
+
+                <form onsubmit="event.preventDefault()" action="" class="neumorphic-form">
+
+                    <div class="neumorphic-input-wrapper" id="neumorphic-input-wrapper1">
+                        <label for="neumorphic-password" class="fw-bold" style="font-size:16px;">New Password</label>
+                        <input type="password" name="neumorphic-password" style="width: 335px;" id="txt_password1" placeholder="password"><span id="err_confirmvalidation"></span>
+                        <span class="toggle-password" onclick="togglePasswordVisibility1()">
+                            <i id="eye-icon1" class="fa fa-eye-slash" style="margin-top:75px;"></i>
+                        </span>
+                    </div>
+                    <div class="neumorphic-input-wrapper" id="neumorphic-input-wrapper1">
+                        <label for="neumorphic-password" class="fw-bold" style="font-size:16px;">Confirm Password</label>
+                        <input type="password" name="neumorphic-password" style="width: 335px;" id="txt_passwordconfirm" placeholder="password"><span id="err_confirmvalidation1"></span>
+                        <span class="toggle-password" onclick="togglePasswordVisibility2()">
+                            <i id="eye-icon2" class="fa fa-eye-slash" style="margin-top:75px;"></i>
+                        </span>
+                    </div>
+                    <label for="myValue" style="vertical-align: middle; color: red;text-align: center;margin-left:100px;font-size:18px;" id="span_invalid"></label>
+                    <button type="submit" id="btn_LoginConfirm" style="text-align: center;"><p style="margin-top:-7px;">Submit</p></button>
+                </form>
+
+            </div>
+
+            <!-- ================= CAPTCHA CARD ================= -->
+
+            <div class="card d-none" id="captchaCard">
+
+                <div class="captcha-card-body">
+
+                    <!-- Header -->
+                    <div class="captcha-header">
+                        <div class="captcha-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+
+                        <h5 class="captcha-title">Security Verification</h5>
+
+                        <p class="captcha-subtitle">
+                            Complete this security check to continue with your password reset.
+                        </p>
+                    </div>
+
+                    <!-- Captcha Image + Refresh -->
+                    <div class="captcha-image-row">
+
+                        <div class="captcha-image-box">
+                            <img id="captchaImage" src="/CloudilyaUnited/Login/GetCaptcha" alt="Captcha verification image" />
+                        </div>
+
+                        <button type="button" id="refreshCaptcha" class="captcha-refresh-btn" title="Refresh Captcha" aria-label="Refresh Captcha">
+
+                            <i class="fas fa-rotate-right"></i>
+
+                        </button>
+
+                    </div>
+
+                    <!-- Captcha Input -->
+                    <div class="captcha-input-wrapper">
+
+                        <p class="captcha-subtitle">
+                            Enter the characters shown above
+                        </p>
+
+                        <input type="text" id="txtCaptcha" class="form-control" placeholder="Enter Captcha" autocomplete="off" />
+                        <span id="captchaError" class="text-danger captcha-error"></span>
+
+                    </div>
+
+                    <!-- Verify Button -->
+                    <button type="button" id="btnVerifyCaptcha" class="captcha-verify-btn">
+
+                        <i class="fas fa-check-circle me-2"></i>
+                        Verify Captcha & Continue
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="card d-none" id="Otpcard">
+                <div class="position-relative">
+                    <div class="p-2 text-center">
+                        <h6>Please Enter OTP</h6>
+                        <div> <span>OTP Sent to registered Email:<small id="txt_email"></small> and Mobile:</span> <small id="txt_mobile"></small> </div>
+                        <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
+                            <input class="m-2 text-center form-control rounded otp-input" type="text" id="first" maxlength="1" autocomplete="one-time-code" />
+                            <input class="m-2 text-center form-control rounded otp-input" type="text" id="second" maxlength="1" />
+                            <input class="m-2 text-center form-control rounded otp-input" type="text" id="third" maxlength="1" />
+                            <input class="m-2 text-center form-control rounded otp-input" type="text" id="fourth" maxlength="1" />
+                            <input class="m-2 text-center form-control rounded otp-input" type="text" id="fifth" maxlength="1" />
+                            <input class="m-2 text-center form-control rounded otp-input" type="text" id="sixth" maxlength="1" />
+                        </div>
+                        <div class="mt-4">
+                            <button type="button" class="btn px-4 validate" style="background-color:dodgerblue;" id="btn_OTP">
+                                <p style="margin-top:2px;color:white;">Submit</p>
+                            </button>
+                        </div>
+                    </div>
+                    <h4 id="err_otpmsg" style="vertical-align: middle; color: red;text-align: center;font-size:18px;"></h4>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Change password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="passwordchange-card mx-auto" style="max-width: 350px;">
+                                <div class="card-body">
+                                    <div id="loginForm" class="mt-2" style="max-width: 350px;">
+                                        <form method="post" class="d-grid gap-3 mt-3" role="form" action="/CloudilyaUnited/Login/ChangePassword">
+                                            
+                                            <div class="form-group">
+                                                <label for="New Password" class="text-left label text-black">New Password</label>
+                                                <input type="password" name="New Password" id="txt_NewPasswordchange" required class="form-control label" placeholder="New Password">
+                                                <i class="fas fa-eye-slash toggle-password1"></i>
+                                                <span id="error_NewPasswordchange" class="text-danger  d-none2" role="alert"></span>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Confirm Password" class="text-left label text-black">Confirm Password</label>
+                                                <input type="password" name="Confirm Password" id="txt_ConfirmPasswordchange" required class="form-control label" placeholder="Confirm Password">
+                                                <i class="fas fa-eye-slash toggle-password2"></i>
+                                                <span id="error_ConfirmPasswordchange" class="text-danger d-none3" role="alert"></span>
+                                            </div>
+
+                                            <button type="submit" name="login" id="btn_submit" class="btn btn-primary btn-block">Submit</button>
+                                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8IE7FjH-whtJgnPhvqAD4Oj4bPVbMRL1HkxS0zlyNsj059BbJb73xCEtnfLPKIm5lcp4Dk1BD9YsJ9pmj1NUhQmhhz921RwTH2htuutqWDzP4qkZYYtclM6fKlURxrIr4M_M2mYrDGit23EHqMa6bBc" /></form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/CloudilyaUnited/lib/select2/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <input id="VerifyOTP" name="VerifyOTP" type="hidden" value="/CloudilyaUnited/Login/VerifyOTP" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script>
+            const EncryptionHelper = (() => {
+            const keyHex = document.querySelector('meta[name="enc-key"]').content;
+
+            function encrypt(data) {
+                const str = typeof data === "string" ? data : JSON.stringify(data);
+
+                // ✅ Parse key fresh each time
+                const key = CryptoJS.enc.Hex.parse(keyHex);
+
+                // ✅ Generate a random IV explicitly — don't let CryptoJS auto-generate
+                const iv = CryptoJS.lib.WordArray.random(16);
+
+                const encrypted = CryptoJS.AES.encrypt(str, key, {
+                    iv:      iv,                  // ✅ pass IV explicitly
+                    mode:    CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7
+                });
+
+                // ✅ Prepend IV to ciphertext — matches C# Buffer.BlockCopy
+                const combined = CryptoJS.enc.Hex.parse(
+                    iv.toString() + encrypted.ciphertext.toString()
+                );
+                return CryptoJS.enc.Base64.stringify(combined);
+            }
+
+            function decrypt(encryptedBase64) {
+                const key = CryptoJS.enc.Hex.parse(keyHex);
+
+                const combined = CryptoJS.enc.Base64.parse(encryptedBase64);
+                const hexStr   = combined.toString(CryptoJS.enc.Hex);
+
+                // ✅ First 32 hex chars = 16 bytes = IV
+                const iv         = CryptoJS.enc.Hex.parse(hexStr.substring(0, 32));
+                const ciphertext = CryptoJS.enc.Hex.parse(hexStr.substring(32));
+
+                const decrypted = CryptoJS.AES.decrypt(
+                    { ciphertext: ciphertext },
+                    key,
+                    {
+                        iv:      iv,
+                        mode:    CryptoJS.mode.CBC,
+                        padding: CryptoJS.pad.Pkcs7
+                    }
+                );
+
+                return decrypted.toString(CryptoJS.enc.Utf8);
+            }
+
+            return { encrypt, decrypt };
+        })();
+    </script>
+
+    <script>
+        var forgotuseremail = '';
+        var forgotusermobile = '';
+        var forgotuserphonenumber = '';
+        var resetToken;
+        // Employee Login 2FA
+        let employee2FAChallengeId = "";
+        let employee2FAMode = false;
+
+        $(document).ready(function() {
+
+            $("#isUserAction").val("false");
+            isUserAction = $("#isUserAction").val()
+            var password = '';
+            var login = '';
+            var reload = '';
+            var reload = '';
+            var errorMessage = "";
+            var colcode = $('#userid').val();
+
+            // if (localStorage.getItem('userName') && localStorage.getItem('password')) {
+            //     $('#txt_UserName').val(localStorage.getItem('userName'));
+            //     $('#txt_Password').val(localStorage.getItem('password'));
+            //     $('#rememberMe').prop('checked', true); // Check "Remember me"
+            // }
+
+            var rememberMeEnabled = $("#RememberMeEnabled").val() === "true";
+
+
+            if (rememberMeEnabled)
+            {
+                if (localStorage.getItem('userName') && localStorage.getItem('password')) {
+                    $('#txt_UserName').val(localStorage.getItem('userName'));
+                    $('#txt_Password').val(localStorage.getItem('password'));
+                    $('#rememberMe').prop('checked', true);
+                }
+            }
+            else
+            {
+                localStorage.removeItem('userName');
+                localStorage.removeItem('password');
+            }
+            // Handle button click
+
+            $("#Otpcard").hide();
+            $("#captchaCard").hide();
+            $("#logincardconfirm").hide();
+
+            if (colcode == "Session Expired") {
+
+                alert("Session Expired Login Again");
+            }
+
+            $('.otp-input').on('input', function () {
+
+                // Allow digits only
+                this.value = this.value.replace(/[^0-9]/g, '');
+
+            });
+
+           $('#btn_Login').on('click', function (e) {
+              e.preventDefault(); // Prevent default form submission
+              var valid = ForGotPasswordValidations();
+              if (valid) {
+                  $("#otpLoader").show();
+                  $("#btn_Login").prop("disabled", true);
+                  // Collect form data
+                    const formData = {
+                        UserName: $('#txt_UserName').val(),
+                        Password: $('#txt_Password').val(),
+                        RememberMe: $('#rememberMe').is(':checked')
+                    };
+
+                // Set a flag to indicate user action
+                $("#isUserAction").val("true");
+
+                 if (formData.RememberMe) {
+                     // Store credentials in localStorage (Alternatively, you can use cookies)
+                     localStorage.setItem('userName', formData.UserName);
+                     localStorage.setItem('password', formData.Password);
+                 } else {
+                     // Remove stored credentials if "Remember Me" is unchecked
+                     localStorage.removeItem('userName');
+                     localStorage.removeItem('password');
+                 }
+
+                    // Make AJAX POST request
+                 $.ajax({
+                    url: '/CloudilyaUnited/Login/Login', // Your action URL
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+
+                        // Never log OTP/password/token values here.
+                        console.log('Login response received');
+
+                        $("#otpLoader").hide();
+                        $("#btn_Login").prop("disabled", false);
+
+
+                        // =========================================================
+                        // NORMAL SUCCESSFUL LOGIN
+                        // =========================================================
+                        if (response.success === true) {
+
+                            if (response.redirectUrl) {
+                                window.location.href = response.redirectUrl;
+                            }
+
+                            return;
+                        }
+
+
+                        // =========================================================
+                        // EMPLOYEE / EXTERNAL EVALUATOR 2FA
+                        // login = 3
+                        // =========================================================
+                        if (response.login == 3) {
+
+                            employee2FAMode = true;
+
+                            // Store only ChallengeId in JavaScript.
+                            // OTP itself remains server-side.
+                            employee2FAChallengeId =
+                                response.challengeId || "";
+
+
+                            // Clear any previous error messages
+                            $('#span_invalid').text('').hide();
+                            $('#err_otpmsg').text('').hide();
+
+
+                            // Clear previous OTP boxes
+                            $('#first, #second, #third, #fourth, #fifth, #sixth')
+                                .val('');
+
+
+                            // Get masked contact details returned from controller.
+                            // Supporting both camelCase and PascalCase
+                            // avoids serialization naming issues.
+                            const maskedEmail =
+                                response.email ||
+                                response.Email ||
+                                "";
+
+                            const maskedPhone =
+                                response.phoneNumber ||
+                                response.PhoneNumber ||
+                                "";
+
+
+                            // Display masked details
+                            $('#txt_email').text(
+                                maskedEmail !== ""
+                                    ? " " + maskedEmail
+                                    : " Registered Email"
+                            );
+
+                            $('#txt_mobile').text(
+                                maskedPhone !== ""
+                                    ? " " + maskedPhone
+                                    : " Registered Mobile"
+                            );
+
+
+                            // Hide normal login form
+                            $('#loginFormMain').hide();
+
+
+                            // Show existing OTP card
+                            $('#Otpcard')
+                                .removeClass('d-none')
+                                .show();
+
+
+                            // Focus first OTP box
+                            setTimeout(function () {
+                                $('#first').focus();
+                            }, 100);
+
+
+                            return;
+                        }
+
+
+                        // =========================================================
+                        // FIRST-TIME PASSWORD CHANGE
+                        // Existing behavior unchanged
+                        // =========================================================
+                        if (response.login == 1) {
+
+                            $('#span_invalid')
+                                .text(
+                                    response.errorMessage ||
+                                    response.message ||
+                                    response.Message ||
+                                    ''
+                                )
+                                .show();
+
+                            if (response.reload == "Click") {
+
+                                $('#loginModal').modal('show');
+
+                            } else if (
+                                response.reload == "Reload" ||
+                                response.reload == "FreshLoad"
+                            ) {
+
+                                $('#loginModal').modal('hide');
+                            }
+
+                            return;
+                        }
+
+
+                        // =========================================================
+                        // PASSWORD EXPIRED
+                        // Existing behavior unchanged
+                        // =========================================================
+                        if (response.login == 2) {
+
+                            $('#span_invalid')
+                                .text(
+                                    response.errorMessage ||
+                                    response.message ||
+                                    response.Message ||
+                                    ''
+                                )
+                                .show();
+
+                            if (response.reload == "Click") {
+
+                                $('#loginModal').modal('show');
+
+                            } else if (
+                                response.reload == "Reload" ||
+                                response.reload == "FreshLoad"
+                            ) {
+
+                                $('#loginModal').modal('hide');
+                            }
+
+                            return;
+                        }
+
+
+                        // =========================================================
+                        // INVALID LOGIN / OTHER ERRORS
+                        // =========================================================
+                        $('#span_invalid')
+                            .text(
+                                response.errorMessage ||
+                                response.message ||
+                                response.Message ||
+                                'Unable to login. Please try again.'
+                            )
+                            .show();
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error:', error);
+                        $("#otpLoader").hide();
+                        $("#btn_Login").prop("disabled", false);
+                        $('#errorMessage').text('An error occurred. Please try again.').show();
+                    }
+                 });
+              }
+           });
+
+
+            $("#btn_submit").on("click", function (e) {
+                e.preventDefault(); // Prevent default form submission
+                // Perform password validations
+                var valid1 = ChangepasswordValidations1();
+                if (valid1) {
+                    // If valid, submit data to the server
+                    $.ajax({
+                        type: "POST",
+                        dataType: "JSON",
+                        url: "/CloudilyaUnited/Login/ConfirmChangePassword",
+                        headers:  { 'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val() },
+                        data: {
+                            NewPW: $("#txt_NewPasswordchange").val(),
+                            ConfirmPassword: $("#txt_ConfirmPasswordchange").val(),
+                            OldPassword: $('#txt_Password').val(),
+                        },
+                        success: function (response) {
+                          //  if (response.status === true) {
+                                // Success notification
+                                if (response.result === "Password Changed Successfully") {
+                                    $.notify(response.result, {
+                                        globalPosition: 'top right',
+                                        className: 'success'
+                                    });
+                                    // Optional: Hide the modal if successful
+                                    $('#loginModal').modal('hide');
+                                     $('#span_invalid').text('').show();
+                                     $('#txt_NewPasswordchange, #txt_ConfirmPasswordchange').val('');
+                                }
+                          //  }
+                            else {
+                                // Error notification
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'error'
+                                });
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            // Handle server errors
+                            $.notify("An error occurred while changing the password.", {
+                                globalPosition: 'top right',
+                                className: 'error'
+                            });
+                        }
+                    });
+                }
+            });
+
+            // $("#btn_resend").click(function () {
+            //     $("#first, #second, #third, #fourth, #fifth,#sixth").val("");
+            //     $("#btn_resend").hide();
+            //     Relode();
+            //     $("#err_otpmsg").hide();
+            // })
+
+            var otpTimerRunning = false; // Flag to indicate whether the OTP timer is running
+            $('#test').select2();
+            $("#timer").hide();
+
+            // Remove classes 'btndiv' and 'btndiv1' from elements with IDs 'btndiv' and 'btndiv1'
+            $('#btn_Backs, #btn_Backs1').removeClass('btndiv btndiv1');
+
+            $("#btn_Backs").hide();
+            $("#btn_Backs1").hide();
+            // Set input values to empty strings
+            // $("#txt_UserName").val("");
+            // $("#txt_Password").val("");
+            var oldpassword = "";
+
+            //======Back button for otp form to login form=============//
+            $(document).on('click', '#btn_Backs', function(e) {
+                if (!otpTimerRunning) {
+                    switchForm3("#otpForm", "#loginForm");
+                    // Remove classes 'btndiv' and 'btndiv1' from elements with IDs 'btndiv' and 'btndiv1'
+                    $('#btn_Backs, #btn_Backs1').removeClass('btndiv btndiv1');
+                    $("#btn_Backs").hide();
+                    $("#btn_Backs1").hide();
+                    $("#timer").hide();
+                }
+            });
+
+            //======Back button for otp form to login form=============//
+            $(document).on('click', '#btn_Backs1', function(e) {
+                switchForm4("#changePasswordForm", "#otpForm");
+                //Add class to btndiv
+                $('#btn_Backs').addClass('btndiv');
+                // Remove class from btndiv1
+                $('#btn_Backs1').removeClass('btndiv1');
+                $("#btn_Backs").show();
+                $("#btn_Backs1").hide();
+                $("#timer").show();
+            });
+            Alltextboxesenter();
+            $(".checkFilled").on("keyup", Alltextboxesenter);
+             /*   var otpTimer;  */// Variable to store the timer
+            document.querySelectorAll('.toggle-password1, .toggle-password2').forEach(function (icon) {
+                icon.addEventListener('click', function () {
+                   const input = this.closest('.form-group').querySelector('input');
+                   if (input.type === 'password') {
+                       input.type = 'text';
+                       this.classList.remove('fa-eye-slash');
+                       this.classList.add('fa-eye');
+                   } else {
+                       input.type = 'password';
+                       this.classList.remove('fa-eye');
+                       this.classList.add('fa-eye-slash');
+                   }
+                });
+            });
+
+            // Username keyup event for real-time validation
+            $('#txt_UserName').keyup(function() {
+                var errorTooltip = $("#error_UserName");
+                errorTooltip.text($(this).val().trim() === "" ? "Enter username." : "").toggleClass('d-none', $(this).val().trim() !== "");
+            });
+
+            //================ Forgot Password link Click functionality===========================//
+
+            $(".link-secondary").on("click", function(e) {
+                e.preventDefault();
+
+                var valid = ForGotPasswordValidations();
+                if (valid) {
+
+                    $.ajax({
+                        type: "get",
+                        dataType: "JSON",
+                        url: "/CloudilyaUnited/Login/ForgotpasswordClickFunctionality",
+                        data: {
+                            UserName: $("#txt_UserName").val()
+                        },
+                        success: function(response) {
+                            if (response.status == true) {
+                                $("#loadingOverlay").removeClass("d-none");
+                                //switchForm("#loginForm", "#otpForm");
+                                $.ajax({
+                                    type: "Post",
+                                    dataType: "JSON",
+                                    url: "/CloudilyaUnited/Login/GetOTPFunctionality",
+                                    success: function(response) {
+                                        if (response.status == true) {
+                                            if (response.result == "OTP sent Your Mobile") {
+                                                // Hide loading overlay on success
+                                                $("#loadingOverlay").addClass("d-none");
+                                                $("#txt_UserName1").val($("#txt_UserName").val());
+                                                $("#txt_OTP").val("");
+                                                switchForm("#loginForm", "#otpForm");
+                                                //Add class to btndiv
+                                                $('#btn_Backs').addClass('btndiv');
+                                                // Remove class from btndiv1
+                                                $('#btn_Backs1').removeClass('btndiv1');
+                                                // $("#btndiv").show();
+                                                // $("#btndiv1").hide();
+                                                $("#btn_Backs").show();
+                                                $("#btn_Backs1").hide();
+                                                $("#timer").show();
+                                                $.notify(response.result, {
+
+                                                    globalPosition: 'top right',
+                                                    className: 'success',
+
+                                                })
+                                                otpTimerRunning = true;
+                                                handleOtpSent(); // Start the timer when OTP is sent
+
+                                            }
+                                            else {
+                                                $.notify(response.result, {
+                                                    globalPosition: 'top right',
+                                                    className: 'success',
+                                                })
+                                            }
+                                        }
+                                        else {
+                                            $.notify(response.result, {
+                                                globalPosition: 'top right',
+                                                className: 'success',
+                                            })
+                                        }
+                                    },
+                                    error: function(xhr, status, error) {
+                                    }
+                                });
+                            }
+                            else {
+                                var errorTooltip = $("#error_UserName");
+                                errorTooltip.text(response.result).removeClass('d-none');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                        }
+                    });
+                }
+            });
+
+            // =============================================================
+            // EMPLOYEE LOGIN 2FA - OTP SUBMIT
+            // =============================================================
+
+            $("#btn_OTP").on("click", function (e) {
+
+                e.preventDefault();
+
+
+                // ---------------------------------------------------------
+                // Only handle this button as Login 2FA when login=3 flow
+                // activated it.
+                // ---------------------------------------------------------
+
+                if (!employee2FAMode) {
+                    return;
+                }
+
+                $("#err_otpmsg").text("").hide();
+
+                // ---------------------------------------------------------
+                // Collect 6 OTP boxes
+                // ---------------------------------------------------------
+
+                const otp =
+                    ($("#first").val() || "") +
+                    ($("#second").val() || "") +
+                    ($("#third").val() || "") +
+                    ($("#fourth").val() || "") +
+                    ($("#fifth").val() || "") +
+                    ($("#sixth").val() || "");
+
+
+                // ---------------------------------------------------------
+                // Validate OTP locally
+                // ---------------------------------------------------------
+
+                if (!/^\d{6}$/.test(otp)) {
+
+                    $("#err_otpmsg").text("Please enter a valid 6-digit OTP.").show();
+
+                    return;
+                }
+
+
+                if (!employee2FAChallengeId) {
+
+                    $("#err_otpmsg")
+                        .text(
+                            "Login verification session expired. Please login again."
+                        )
+                        .show();
+
+                    return;
+                }
+
+
+                // ---------------------------------------------------------
+                // Prevent multiple Submit clicks
+                // ---------------------------------------------------------
+                $("#btn_OTP").prop("disabled", true);
+                $("#otpLoader").show();
+
+                // ---------------------------------------------------------
+                // Verify OTP
+                // ---------------------------------------------------------
+
+                $.ajax({
+                    type: "POST",
+                    url: '/CloudilyaUnited/Login/Verify2WayOtp',
+                    headers: {
+                        'RequestVerificationToken':
+                            $('input[name="__RequestVerificationToken"]')
+                                .first()
+                                .val()
+                    },
+
+                    data: {
+                        otp: otp,
+                        challengeId: employee2FAChallengeId,
+                        username: $("#txt_UserName").val(),
+                        /*
+                            Existing Login() architecture requires password
+                            again when Verify2WayOtp internally calls Login().
+                            We are preserving your existing flow.
+                        */
+                        password: $("#txt_Password").val()
+                    },
+
+
+                    success: function (response) {
+                        $("#otpLoader").hide();
+                        $("#btn_OTP").prop("disabled", false);
+
+                        // =================================================
+                        // LOGIN COMPLETED
+                        // =================================================
+
+                        if (response.success === true) {
+                            // Destroy frontend challenge state
+                            employee2FAMode = false;
+                            employee2FAChallengeId = "";
+
+                            if (response.redirectUrl) {
+                                window.location.href = response.redirectUrl;
+                            }
+                            return;
+                        }
+
+
+                        // =================================================
+                        // FIRST-TIME PASSWORD CHANGE
+                        // Existing login may return this after OTP
+                        // =================================================
+
+                        if (response.login == 1) {
+
+                            employee2FAMode = false;
+                            employee2FAChallengeId = "";
+                            $("#Otpcard").hide();
+                            $("#loginFormMain").show();
+                            if (response.reload == "Click") {
+                                $("#loginModal").modal("show");
+                            }
+                            return;
+                        }
+
+
+                        // =================================================
+                        // OTP SESSION INVALID / EXPIRED
+                        // =================================================
+
+                        if (response.sessionExpired === true) {
+
+                            employee2FAMode = false;
+                            employee2FAChallengeId = "";
+                            $("#first, #second, #third, #fourth, #fifth, #sixth").val("");
+                            const msg = response.message || "OTP session expired. Please login again.";
+                            $("#err_otpmsg").text(msg).show();
+
+                            // Give user a moment to read the error.
+                            setTimeout(function () {
+                                $("#Otpcard").hide();
+                                $("#loginFormMain").show();
+                                $("#err_otpmsg").text("").hide();
+                                $("#txt_Password").focus();
+                            }, 1800);
+                            return;
+                        }
+
+
+                        // =================================================
+                        // WRONG OTP
+                        // =================================================
+                        $("#err_otpmsg").text(response.message || "Invalid OTP.").show();
+                        // Clear boxes for next attempt
+                        $("#first, #second, #third, #fourth, #fifth, #sixth").val("");
+                        $("#first").focus();
+                    },
+
+                    error: function () {
+                        $("#otpLoader").hide();
+                        $("#btn_OTP").prop("disabled", false);
+                        $("#err_otpmsg").text("Unable to verify OTP. Please try again.").show();
+                    }
+                });
+            });
+
+            //================OTP Submit  Button Click functionality=============================//
+
+            $("#btn_OTPSubmit").click(function(e) {
+                e.preventDefault(); // Prevent the form from submitting (if you're using a form)
+                // Show loading overlay
+                //$("#loadingOverlay").removeClass("d-none");
+                if (employee2FAMode === true) {
+                    return false;
+                }
+                var valid = OTPValidations();
+                if (valid == true) {
+                    $.ajax({
+                        type: "Post",
+                        dataType: "JSON",
+                        url: "/CloudilyaUnited/Login/Forgotpassword",
+                        data:
+                        {
+                            OTP: $("#txt_OTP").val()
+                        },
+                        success: function(response) {
+                            if (response.status == true) {
+                                if (response.result == "Invalid OTP") {
+                                    $.notify(response.result, {
+                                        globalPosition: 'top right',
+                                        className: 'success',
+                                    })
+                                }
+                                else {
+                                    // Hide loading overlay on success
+                                    // $("#loadingOverlay").addClass("d-none");
+                                    oldpassword = response.result.oldPassword;
+                                    var username = response.result.userName;
+                                    // Store values before switching
+                                    $("#txt_UserName1").val(username);
+                                    $("#txt_NewPassword").val("");
+                                    $("#txt_ConfirmPassword").val("");
+                                    handleOtpSubmit()
+                                    $("#timer").show();
+
+                                    switchForm1("#otpForm", "#changePasswordForm");
+                                    //Add class to btndiv
+                                    $('#btn_Backs').removeClass('btndiv');
+                                    // Remove class from btndiv1
+                                    $('#btn_Backs1').addClass('btndiv1');
+                                    $("#btn_Backs").hide();
+                                    $("#btn_Backs1").show();
+                                }
+                            }
+                            else {
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'success',
+                                })
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                        }
+                    });
+                }
+            });
+
+            //===============OTP Submit  Button Click functionality=============================//
+
+            $("#btn_ChangePasswordSave1").on("click", function(e) {
+                e.preventDefault(); // Prevent the form from submitting (if you're using a form)
+                // Show loading overlay
+                $("#loadingOverlay").removeClass("d-none");
+                var valid = ChangepasswordValidations();
+                if (valid == true) {
+                    $.ajax({
+                        type: "Post",
+                        dataType: "JSON",
+                        url: "/CloudilyaUnited/Login/ChangePassword",
+                        data: {
+                            UserName: $("#txt_UserName1").val(),
+                            OldPassword: oldpassword,
+                            NewPassword: $("#txt_NewPassword").val(),
+                            ConfirmPassword: $("#txt_ConfirmPassword").val(),
+                        },
+                        success: function(response) {
+                            if (response.status == true) {
+                                if (response.result == "Password Changed Successfully") {
+                                    $.notify(response.result, {
+                                        globalPosition: 'top right',
+                                        className: 'success',
+                                    })
+                                    // Hide loading overlay on success
+                                    $("#loadingOverlay").addClass("d-none");
+                                    switchForm2("#changePasswordForm", "#loginForm");
+                                }
+                                else {
+                                    $.notify(response.result, {
+                                        globalPosition: 'top right',
+                                        className: 'success',
+                                    })
+                                }
+                            }
+                            else {
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'success',
+                                })
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle error response
+                        }
+                    });
+                }
+
+            });
+
+
+            $("#btn_LoginConfirm").click(function () {
+                var valid = ConfirmLoginvalidatePasswords();
+                if (valid == true) {
+                                // ✅ Encrypt all fields before sending
+                    var encryptedData = EncryptionHelper.encrypt({
+                        ColCode:         forgotcolcode,
+                        CollegeId:       forgotcollegeid,
+                        UserId:          forgotempid,
+                        UserType:        forgotusertype,
+                        UserName:        forgotusername,
+                        //UserName:      $("#txt_UserName1").val(),
+                        //OldPassword:   oldpassword,
+                        NewPassword:     $("#txt_password1").val(),
+                        ConfirmPassword: $("#txt_passwordconfirm").val(),
+                    });
+
+
+                    $.ajax({
+                        type: "POST",
+                        dataType: "JSON",
+                        url: "/CloudilyaUnited/Login/ConfirmForgotPassword",
+                        data: {
+                            UserId:forgotempid,
+                            AdminUserId:forgotadminid,
+                            UserName: $("#txt_UserName1").val(),
+                            //OldPassword: oldpassword,
+                            NewPW: $("#txt_password1").val(),
+                            ConfirmPassword: $("#txt_passwordconfirm").val(),
+                        },
+                        success: function (response) {
+                            //  if (response.status === true) {
+                            // Success notification
+                            if (response.result === "Password Changed Successfully") {
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'success'
+                                });
+                                // Optional: Hide the modal if successful
+                                $('#loginModal').modal('hide');
+                                $('#loginFormMain').show();
+                                $("#logincardconfirm").hide();
+                                document.getElementById("rememberMe").checked = false
+                                $('#span_invalid').text('').show();
+                                $("#loginFormElement").show();
+                                $('#txt_Password, #txt_UserName').val('');
+                            }
+                            //  }
+                            else {
+                                // Error notification
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'error'
+                                });
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            // Handle server errors
+                            $.notify("An error occurred while changing the password.", {
+                                globalPosition: 'top right',
+                                className: 'error'
+                            });
+                        }
+                    });
+                }
+            });
+
+            $("#btn_forgot").on("click", function (e) {
+                e.preventDefault();
+                var valid = ForgotUsernameValidation();
+                if(valid)
+                {
+                    $("#loginFormMain").hide();
+                    $("#captchaCard").removeClass("d-none").show();
+
+                    $("#captchaImage")
+                        .attr(
+                            "src",
+                            "/CloudilyaUnited/Login/GetCaptcha?"
+                            + new Date().getTime()
+                        );
+                }
+            });
+
+            $("#btnVerifyCaptcha").click(function () {
+
+                var captcha = $("#txtCaptcha").val();
+
+                if(captcha.trim()=="")
+                {
+                    $("#captchaError").text("Please enter captcha");
+                    return;
+                }
+
+
+
+                $.ajax({
+                    type:"POST",
+                    url:"/CloudilyaUnited/Login/VerifyCaptcha",
+                    data:
+                    {
+                        captcha:captcha
+                    },
+
+                    success:function(response)
+                    {
+                        if(response.status == true)
+                        {
+
+                            $("#captchaError").text("");
+                            $("#captchaCard").hide();
+                            // AFTER CAPTCHA SUCCESS CALL EXISTING OTP FLOW
+                            SendOTPAfterCaptcha();
+
+                        }
+                        else
+                        {
+                            $("#captchaError").text("Invalid Captcha");
+
+                            $("#captchaImage")
+                            .attr(
+                                "src",
+                                "/CloudilyaUnited/Login/GetCaptcha?"
+                                +new Date().getTime()
+                            );
+                        }
+
+                    }
+
+                });
+
+            });
+
+            $("#refreshCaptcha").click(function(){
+                $("#captchaImage")
+                .attr(
+                    "src",
+                    "/CloudilyaUnited/Login/GetCaptcha?"
+                    +new Date().getTime()
+                );
+
+                $("#txtCaptcha").val("");
+                $("#captchaError").text("");
+            });
+        });
+
+        function SendOTPAfterCaptcha() {
+
+            const grpCode = $("#txt_GrpCode").val() || "";
+            const colCode = $("#txt_ColCode").val() || "";
+            const userName = $("#txt_UserName").val() || "";
+            const otp = $("#txt_OTP").val() || "";
+
+
+            $("#otpLoader").show();
+
+
+            const requestData = {
+
+                GrpCode: grpCode,
+                ColCode: colCode,
+                UserName: userName,
+                OTP: otp
+
+            };
+
+
+            var encryptedData = EncryptionHelper.encrypt({
+                UserName: $("#txt_UserName").val(),
+            });
+
+
+            $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                url: '/CloudilyaUnited/Login/Forgotpassword',
+                headers: {
+                    'RequestVerificationToken':
+                    $('input[name="__RequestVerificationToken"]').val()
+                },
+
+                data: {
+                    encryptedData: encryptedData
+                },
+                success: function (response) {
+                    // Decrypt response
+                    var decryptedJson = EncryptionHelper.decrypt(response.data);
+                    var decrypted = JSON.parse(decryptedJson);
+                    // Existing mapping logic
+                    var list = decrypted.passwordDetailsOTPList || decrypted.PasswordDetailsOTPList || [];
+                    var result1 = decrypted.result1 || decrypted.Result1 || "";
+                    var result2 = decrypted.result2 || decrypted.Result2 || "";
+                    resetToken = decrypted.resetToken || decrypted.ResetToken || "";
+
+                    $("#otpLoader").hide();
+
+                    if (list.length > 0 &&
+                        list[0].UserName != null &&
+                        ((list[0].PhoneNumber != null) || (list[0].Email))) {
+
+
+                        forgotgrpcode = list[0].grpCode || list[0].GrpCode;
+
+                        forgotcolcode = list[0].colCode || list[0].ColCode;
+
+                        forgotcollegeid = list[0].collegeId || list[0].CollegeId;
+
+                        forgotempid = list[0].employeeId || list[0].EmployeeId;
+
+                        forgotadminid = list[0].adminUserId || list[0].AdminUserId;
+
+                        forgotusername = list[0].userName || list[0].UserName;
+
+                        forgotusertype = list[0].userType || list[0].UserType;
+
+                        forgotuseremail = list[0].email || list[0].Email;
+
+                        forgotusermobile = list[0].phoneNumber || list[0].PhoneNumber;
+
+                        var Message = result1;
+
+                        if (Message === "OTP sent Successfully") {
+
+                            $("#Otpcard").show();
+
+                            $('.err-username, .err-password').text('');
+
+                            $("#span_invalid, #loginFormElement").hide();
+
+                            Alltextboxesenter();
+
+                            $(".checkFilled").on("keyup", Alltextboxesenter);
+
+                            var valid = ForgotLoginvalidation();
+
+                            if (valid) {
+                                Relode();
+                            }
+
+                            // Existing Swal preserved
+
+                            Swal.fire({
+
+                                icon: 'success',
+                                title: "OTP Sent to registered Email and Mobile",
+                                position: 'center',
+                                showClass: {
+                                    popup: 'animated fadeInDown faster'
+                                },
+                                hideClass: {
+                                    popup: 'animated fadeOutUp faster'
+                                },
+                                showConfirmButton: true,
+                                customClass: {
+
+                                    title:'title-content Pupup-custom-title-font-size',
+                                    content:'green-text'
+
+                                },
+
+                                onClose: () => {
+
+                                    $('#Otpcard').removeClass('d-none');
+
+                                    $('#Otpcard')
+                                        .attr(
+                                            'style',
+                                            'display: block !important'
+                                        );
+                                }
+                            });
+
+                            $("#otpLoader").hide();
+                            $(".spinner-border").hide();
+
+                            // Existing masking logic
+
+                            var Newemail = "";
+                            var NewMobile = "";
+
+                            if (forgotuseremail) {
+                                for (var i = 0; i < forgotuseremail.length; i++) {
+
+                                    if (i < 3 || i >= forgotuseremail.length - 6) {
+                                        Newemail = Newemail + forgotuseremail[i];
+                                    }
+                                    else {
+                                        Newemail = Newemail + '*';
+                                    }
+
+                                }
+
+                            }
+
+
+                            if (forgotusermobile) {
+
+                                for (var i = 0; i < forgotusermobile.length; i++) {
+
+                                    if (
+                                        i < 3 ||
+                                        i >= forgotusermobile.length - 3
+                                    ) {
+
+
+                                        NewMobile =
+                                        NewMobile + forgotusermobile[i];
+
+                                    }
+                                    else {
+
+                                        NewMobile =
+                                        NewMobile + '*';
+
+                                    }
+
+                                }
+
+                            }
+
+                            $("#txt_email").text(Newemail);
+                            $("#txt_mobile").text(NewMobile);
+                            $("#Otpcard").show();
+                            $("#logincard").hide();
+                            $("#logincardconfirm").hide();
+                        }
+
+                    }
+                    else {
+
+                        $("#otpLoader").hide();
+
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Forgot Password Failed',
+                            text: result1 || "Username doesn't exist"
+                        });
+
+                        $("#captchaCard").hide();
+                        $("#Otpcard").hide();
+
+                        $("#loginFormMain").show();
+                        $("#loginFormElement").show();
+
+                        $("#txtCaptcha").val("");
+
+                    }
+
+
+                },
+
+
+                error: function (xhr, status, error) {
+                    $("#otpLoader").hide();
+                    console.error("Error:", error);
+                    alert("Error: " + error);
+                }
+
+            });
+
+        }
+
+        function ForgotUsernameValidation()
+        {
+            var valid=true;
+            var username=$("#txt_UserName").val();
+
+            if(!username || username.trim()=="")
+            {
+                valid=false;
+                $(".err-username")
+                .text("Please enter username")
+                .removeClass("d-none");
+            }
+            else
+            {
+                $(".err-username")
+                .text("");
+            }
+
+
+            return valid;
+        }
+
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            var otpTimer;
+
+            function resendOTP() {
+                // Show loading overlay
+                $("#loadingOverlay").removeClass("d-none");
+                // Make an AJAX call to your server to resend OTP
+                $.ajax({
+                    type: "Post",
+                    dataType: "JSON",
+                    url: "/CloudilyaUnited/Login/GetOTPFunctionality",
+                    success: function(response) {
+                        if (response.status == true) {
+                            if (response.result == "OTP sent Your Mobile") {
+
+                                $("#loadingOverlay").addClass("d-none");
+                                $.notify(response.result, {
+
+                                    globalPosition: 'top right',
+                                    className: 'success',
+
+                                })
+                                $("#timer").show();
+                                handleOtpSent(); // Start the timer when OTP is sent
+
+                            }
+                            else {
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'success',
+                                })
+                            }
+                        }
+                        else {
+                            $.notify(response.result, {
+                                globalPosition: 'top right',
+                                className: 'success',
+                            })
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                    }
+                });
+            }
+
+            otpTimer = setInterval(function() {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.text(minutes + ":" + seconds);
+
+                if (--timer < 0) {
+                    // Timer reached zero, handle this as needed
+                    clearInterval(otpTimer);
+                    display.text("00:00");
+
+                    // Display an alert with "Resend OTP" option
+                    var userChoice = confirm("OTP has expired. Do you want to resend?");
+                    if (userChoice) {
+                        $("#timer").hide();
+                        // User clicked OK, resend OTP
+                        resendOTP();
+                    } else {
+                        // User clicked Cancel or closed the alert
+                        // Handle as needed, e.g., redirect to login page
+                        window.location.href = "/CoreERP/Login/Index";
+                        //window.location.href = "/Login/Index";
+                    }
+                }
+            }, 1000);
+            otpTimerRunning = true; // Set the flag to indicate that the OTP timer is running
+        }
+
+        //=============== Function to stop the timer=============================//
+
+        function stopTimer() {
+            clearInterval(otpTimer);
+            $("#timer").text(""); // Clear the timer display
+            otpTimerRunning = false; // Set the flag to indicate that the OTP timer is not running
+        }
+
+        //================ Function to handle OTP sent to mobile========//
+
+        function handleOtpSent() {
+            // ... (your existing code)
+            startTimer(30, $("#timer")); // Start the timer for 5 minutes (300 seconds)
+        }
+
+        //================= Function to handle OTP submission==========//
+        function handleOtpSubmit() {
+            // ... (your existing code)
+            stopTimer(); // Stop the timer when OTP is submitted
+        }
+
+        //===================================== Function to switch between forms==============//
+        function switchForm(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function switchForm1(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function switchForm2(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function switchForm3(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function switchForm4(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function Alltextboxesenter() {
+            var allFilled = true;
+            // Check if all textboxes have a value
+            $(".checkFilled").each(function () {
+                if ($(this).val().trim() === "") {
+                    allFilled = false;
+                    return false; // Exit each loop early if any textbox is empty
+                }
+            });
+            // Enable btn_OTP button if all textboxes are filled
+            if (allFilled) {
+                $("#btn_OTP").prop("disabled", false);
+            } else {
+                $("#btn_OTP").prop("disabled", true);
+            }
+        }
+
+        //=====================================Validations==================================//
+
+        function ChangepasswordValidations1() {
+            var valid = true;
+            var NewValue = $("#txt_NewPasswordchange").val();
+            var ConfirmValue = $("#txt_ConfirmPasswordchange").val();
+            var error_New_Password = $("#error_NewPasswordchange");
+            var error_Confirm_Password = $("#error_ConfirmPasswordchange");
+
+            if (!NewValue || NewValue.trim() === "") {
+                valid = false;
+                error_New_Password.text("Enter New Password").show();
+            } else {
+                error_New_Password.text("").hide();
+            }
+
+            if (!ConfirmValue || ConfirmValue.trim() === "") {
+                valid = false;
+                error_Confirm_Password.text("Enter Confirm Password").show();
+            } else {
+                error_Confirm_Password.text("").hide();
+                if (NewValue !== ConfirmValue) {
+                    valid = false;
+                    error_Confirm_Password.text("Confirm Password does not match New Password ").show();
+                } else {
+                    error_Confirm_Password.text("").hide();
+                }
+            }
+
+            return valid;
+        }
+
+        function validateField(value, errorElement, message) {
+            if (!value || value.trim() === "") {
+                errorElement.text(message).removeClass("d-none");
+                return false;
+            } else {
+                errorElement.text("").addClass("d-none");
+                return true;
+            }
+        }
+
+        function ForGotPasswordValidations() {
+            let valid = true;
+
+            valid &= validateField($("#txt_UserName").val(), $(".err-username"), "Enter username");
+            valid &= validateField($("#txt_Password").val(), $(".err-password"), "Enter password");
+
+            return !!valid;
+        }
+
+
+        function ForGotPasswordValidations() {
+            var valid = true;
+            var username = $("#txt_UserName").val();
+            var password = $("#txt_Password").val();
+            var errorUsername = $(".err-username");
+            var errorPassword = $(".err-password");
+            var message = $("#span_invalid");
+
+            if (!username || username.trim() === "") {
+                valid = false;
+                errorUsername.text("Please enter username").removeClass('d-none');  // Show error message
+            } else {
+                errorUsername.text("");
+                message.text("");
+            }
+
+            if (!password || password.trim() === "") {
+                valid = false;
+                errorPassword.text("Please enter password").removeClass('d-none');  // Show error message
+            } else {
+                errorPassword.text("");
+                message.text("");
+            }
+            return valid;
+        }
+
+        function OTPValidations() {
+
+            var valid = true;
+            var otp = $("#txt_OTP").val();
+            var errorTooltip1 = $("#error_OTP");
+
+            if (!otp || otp.trim() === "") {
+                valid = false;
+                errorTooltip1.text("Enter OTP.").show();  // Show error message
+            } else {
+                errorTooltip1.text("").show("");     // Hide error message
+            }
+
+            return valid;
+        }
+        function ChangepasswordValidations() {
+            var valid = true;
+            var NewValue = $("#txt_NewPassword").val();
+            var ConfirmValue = $("#txt_ConfirmPassword").val();
+            var error_New_Password = $("#error_NewPassword");
+            var error_Confirm_Password = $("#error_ConfirmPassword");
+
+            if (!NewValue || NewValue.trim() === "") {
+                valid = false;
+                error_New_Password.text("Enter New Password").show();
+            } else {
+                error_New_Password.text("").hide();
+            }
+
+            if (!ConfirmValue || ConfirmValue.trim() === "") {
+                valid = false;
+                error_Confirm_Password.text("Enter Confirm Password").show();
+            } else {
+                error_Confirm_Password.text("").hide();
+                if (NewValue !== ConfirmValue) {
+                    valid = false;
+                    error_Confirm_Password.text("Confirm Password does not match New Password ").show();
+                } else {
+                    error_Confirm_Password.text("").hide();
+                }
+            }
+
+            return valid;
+        }
+
+        function restrictMinus(e) {
+            var inputKeyCode = e.keyCode ? e.keyCode : e.which;
+
+            if (inputKeyCode != null) {
+                if (inputKeyCode == 45) e.preventDefault();
+                if (inputKeyCode == 43) e.preventDefault();
+                if (inputKeyCode == 101) e.preventDefault();
+                if (inputKeyCode == 69) e.preventDefault();
+            }
+            var val = e.target.value;
+            if (val.length == 10) {
+                e.preventDefault();
+                return;
+            }
+        }
+
+        // On form submission, include the "isUserAction" value
+        $("#loginForm").on("submit", function () {
+             isUserAction = $("#isUserAction").val();
+
+            // Ensure the hidden input is added to the form
+            if ($('input[name="isUserAction"]').length === 0) {
+                $('<input>').attr({
+                    type: 'hidden',
+                    name: 'isUserAction',
+                    value: isUserAction
+                }).appendTo(this);
+                $("#isUserAction").val("false");
+            }
+            else {
+                // Update the existing input's value
+                $('input[name="isUserAction"]').val(isUserAction);
+            }
+        });
+
+        $(".spinner-border").hide();
+        $("#Otpcard").hide();
+        $("#body6").hide();
+        $("#body4").hide();
+        $("#body3").hide();
+
+        $("#logincardconfirm").hide();
+        $("#btn_resend").hide();
+        $("#logincard").show();
+        $(".allbuttons").hide();
+        Alltextboxesenter();
+        $(".checkFilled").on("keyup", Alltextboxesenter);
+
+
+        document.querySelectorAll('.otp-input').forEach((input, idx, arr) => {
+            // When a user types, move to next input
+            input.addEventListener('input', function () {
+
+                // Digits only
+                this.value =
+                    this.value.replace(/\D/g, '');
+
+                if (
+                    this.value.length === 1 &&
+                    idx < arr.length - 1
+                ) {
+                    arr[idx + 1].focus();
+                }
+            });
+
+            // Handle paste event
+            input.addEventListener('paste', function (e) {
+                const paste = (e.clipboardData || window.clipboardData).getData('text');
+                if (paste.length === arr.length) {
+                    arr.forEach((inp, i) => inp.value = paste[i]);
+                    arr[arr.length - 1].focus();
+                    e.preventDefault();
+                }
+            });
+
+           // Backspace moves to previous box
+          input.addEventListener('keydown', function (e) {
+            if (e.key === 'Backspace' && this.value === '' && idx > 0) {
+                arr[idx - 1].focus();
+            }
+          });
+        });
+
+
+        function togglePasswordVisibility() {
+            passwordInput = document.getElementById("txt_password");
+            eyeIcon = document.getElementById("eye-icon");
+            eyciconcode();
+        }
+        function togglePasswordVisibility1() {
+            passwordInput = document.getElementById("txt_password1");
+            eyeIcon = document.getElementById("eye-icon1");
+            eyciconcode();
+        }
+        function togglePasswordVisibility2() {
+            passwordInput = document.getElementById("txt_passwordconfirm");
+            eyeIcon = document.getElementById("eye-icon2");
+            eyciconcode();
+        }
+        function OTPInput() {
+            console.log("OTPInput function called");
+            const inputs = document.querySelectorAll('#otp > *[id]');
+            console.log("Number of inputs found:", inputs.length);
+            for (let i = 0; i < inputs.length; i++) {
+                console.log("Adding event listener for input", i);
+                inputs[i].addEventListener('keydown', function (event) {
+                    console.log("Keydown event triggered on input", i);
+                    if (event.key === "Backspace") {
+                        inputs[i].value = '';
+                        if (i !== 0) inputs[i - 1].focus();
+                    } else {
+                        if (i === inputs.length - 1 && inputs[i].value !== '') {
+                            return true;
+                        } else if (event.keyCode > 47 && event.keyCode < 58) {
+                            inputs[i].value = event.key;
+                            if (i !== inputs.length - 1) inputs[i + 1].focus();
+                            event.preventDefault();
+                        } else if (event.keyCode > 64 && event.keyCode < 91) {
+                            inputs[i].value = String.fromCharCode(event.keyCode);
+                            if (i !== inputs.length - 1) inputs[i + 1].focus();
+                            event.preventDefault();
+                        }
+                    }
+                });
+            }
+        }
+        function CheckOtp() {
+            enteredOTP = "";
+
+            enteredOTP += document.getElementById("first").value;
+            enteredOTP += document.getElementById("second").value;
+            enteredOTP += document.getElementById("third").value;
+            enteredOTP += document.getElementById("fourth").value;
+            enteredOTP += document.getElementById("fifth").value;
+            enteredOTP += document.getElementById("sixth").value;
+        }
+        function eyciconcode() {
+            if (passwordInput && eyeIcon) {
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    eyeIcon.classList.remove("fa-eye-slash");
+                    eyeIcon.classList.add("fa-eye");
+                } else {
+                    passwordInput.type = "password";
+                    eyeIcon.classList.remove("fa-eye");
+                    eyeIcon.classList.add("fa-eye-slash");
+                }
+            }
+        }
+        function Relode() {
+            $.ajax({
+                type: 'POST',
+                url: GetMailandMobile,
+                dataType: 'JSON',
+                data: {
+                    ApplicationNumber: $("#txt_Applicationno").val(),
+                    Flag: 'ApplicationNumberValidate',
+                },
+                beforeSend: function () {
+                    showLoadingScreen();
+                },
+                success: function (response) {
+                    // Check if response is not empty and result array exists
+                    if (response.forgetPasswordList.length > 0) {
+                        var firstItem3 = response.forgetPasswordList[0];
+                        var email = firstItem3.email;
+                        var mobile = firstItem3.mobile;
+                        var message = firstItem3.message;
+
+                        if (message == "Application Number Not Valid") {
+                            Swal.fire({
+                                icon: 'error',
+                                title: "Enter Valid Application Number",
+                                position: 'center',
+                                showClass: {
+                                    popup: 'animated fadeInDown faster'
+                                },
+                                hideClass: {
+                                    popup: 'animated fadeOutUp faster'
+                                },
+                                //   timer: 2000,
+                                //timerProgressBar: true,
+                                showConfirmButton: true,
+                                customClass: {
+                                    title: 'title-content Pupup-custom-title-font-size',
+                                    content: 'green-text'
+                                },
+                                onClose: () => {
+                                    console.log('Swal modal closed!');
+                                }
+                            });
+                            $(".spinner-border").hide();
+                        }
+                        ConfirmapplicationNumber = firstItem3.applicationNumber;
+                        // var Applicationno = firstItem3.applicationNumber;
+                        var Newemail = "";
+                        var NewMobile = "";
+                        for (var i = 0; i < email.length; i++) {
+                            if (i < 2 || i >= email.length - 10) {
+                                Newemail = Newemail + email[i]
+                            }
+                            else {
+                                Newemail = Newemail + '*'
+                            }
+                        }
+                        for (var i = 0; i < mobile.length; i++) {
+                            if (i < 2 || i >= mobile.length - 2) {
+                                NewMobile = NewMobile + mobile[i]
+                            }
+                            else {
+                                NewMobile = NewMobile + '*'
+                            }
+                        }
+                        $("#txt_email").text(Newemail);
+                        $("#txt_mobile").text(NewMobile);
+                        // Set the initial time to 30 seconds
+                        var timeLeft = 45;
+                        // Update the timer every second
+                        var timerInterval = setInterval(function () {
+                            // Decrease the time left by 1 second
+                            timeLeft--;
+                            // Update the timer display
+                            $("#timer").text("Time left: " + timeLeft + " seconds");
+
+                            // If time is up, clear the interval and display a message
+                            if (timeLeft <= 0) {
+                                clearInterval(timerInterval);
+                                $("#timer").text("Time's up!");
+                                $("#btn_resend").show();
+                                $("#textbox1, #textbox2, #textbox3, #textbox4, #textbox5").val("");
+                                // $("#btn_OTP").prop('disabled', true);
+                                // Optionally, you can trigger an action here when the time is up
+                            }
+                        }, 1000); // Execute every 1000 milliseconds (1 second)
+                    }
+                    if (response && response.result1 && response.result1.length > 0) {
+                        //  var firstItem = response.result1[0];
+                        var Message = response.result1;
+                        if (Message === "OTP sent Successfully") {
+                            Swal.fire({
+                                icon: 'success',
+                                title: "OTP sent Successfully to your Email",
+                                position: 'center',
+                                showClass: {
+                                    popup: 'animated fadeInDown faster'
+                                },
+                                hideClass: {
+                                    popup: 'animated fadeOutUp faster'
+                                },
+                                //   timer: 2000,
+                                //timerProgressBar: true,
+                                showConfirmButton: true,
+                                customClass: {
+                                    title: 'title-content Pupup-custom-title-font-size',
+                                    content: 'green-text'
+                                },
+                                onClose: () => {
+                                    console.log('Swal modal closed!');
+                                }
+                            });
+                            $(".spinner-border").hide();
+                        }
+                        $("#Otpcard").show();
+                        OTPInput();
+                        $("#logincard").hide();
+                        $("#logincardconfirm").hide();
+                    }
+                    if (response.result2.length > 0) {
+                        //var firstItem1 = response.result2[0];
+                        OTP = response.result2;
+                        alert(OTP);
+                    }
+                    else {
+                        console.error("Empty response or result array.");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // Handle error
+                    console.error("Error occurred:", error);
+                }
+            })
+        }
+        //--------------------------------------Validations----------------------//
+        function ConfirmLoginvalidatePasswords() {
+            var password = document.getElementById("txt_password1").value;
+            var confirmPassword = document.getElementById("txt_passwordconfirm").value;
+            var passwordError = document.getElementById("err_confirmvalidation");
+            var passwordError1 = document.getElementById("err_confirmvalidation1");
+
+            // Reset previous error messages
+            passwordError.textContent = "";
+            passwordError1.textContent = "";
+            var valid = true;
+            var errors = []; // Array to hold validation errors
+
+            if (password.trim() === "") {
+                valid = false;
+                passwordError.textContent = "Enter Password";
+            } else if (password.length < 8) { // Check password length
+                valid = false;
+                passwordError.textContent = "Password must be at least 8 characters long";
+            } else {
+                passwordError.textContent = ""; // Clear error message
+            }
+            if (confirmPassword.trim() === "") {
+                valid = false;
+                passwordError1.textContent = "Enter Confirm Password";
+            }
+            else if (password !== confirmPassword) { // Check if passwords match
+                valid = false;
+                passwordError1.textContent = "Passwords do not match";
+            }
+            else {
+                passwordError1.textContent = ""; // Clear error message
+            }
+            return valid;
+        }
+        function Loginvalidation() {
+            var valid = true;
+            var appno = $("#txt_Applicationno").val();
+            var pass = $("#txt_password").val();
+            if (appno == "" || appno == undefined || appno == null) {
+                valid = false;
+                $("#span_ApplicationNo").text("Enter ApplicationNo").show();
+            } else {
+                $("#span_ApplicationNo").text("").hide(); // Hide the validation message
+            }
+
+            if (pass == "" || pass == undefined || pass == null) {
+                valid = false;
+                $("#span_Loginpassword").text("Enter Password").show();
+            } else {
+                $("#span_Loginpassword").text("").hide(); // Hide the validation message
+            }
+            return valid;
+        }
+
+        function ForgotLoginvalidation() {
+            var valid = true;
+            var appno = $("#txt_Applicationno").val();
+            var pass = $("#txt_password").val();
+            if (appno == "" || appno == undefined || appno == null) {
+                valid = false;
+                $("#span_ApplicationNo").text("Enter ApplicationNo").show();
+            }
+            else {
+                $("#span_ApplicationNo").text(" ").show();
+            }
+            return valid;
+        }
+        function Alltextboxesenter() {
+            var allFilled = true;
+            // Check if all textboxes have a value
+            $(".checkFilled").each(function () {
+                if ($(this).val().trim() === "") {
+                    allFilled = false;
+                    return false; // Exit each loop early if any textbox is empty
+                }
+            });
+            // Enable btn_OTP button if all textboxes are filled
+            if (allFilled) {
+                $("#btn_OTP").prop("disabled", false);
+            } else {
+                $("#btn_OTP").prop("disabled", true);
+            }
+        }
+        function showLoadingScreen() {
+            $(".spinner-border").show();
+        }
+
+        //=======================Toggle the Eye password==================================//
+        $("body").on('click', '.toggle-password', function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $("#txt_Password");
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</body>
+</html>
+
+
+    </div>
+    
+
+    <script src="/CloudilyaUnited/js/Scripts/Login/Index.js?v=639244022022366432"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
