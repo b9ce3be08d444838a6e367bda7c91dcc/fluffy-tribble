@@ -1,0 +1,47 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Emulator: start",
+      "type": "shell",
+      "command": "./android-emu.sh start",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Emulator: status",
+      "type": "shell",
+      "command": "./android-emu.sh status",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Emulator: screenshot",
+      "type": "shell",
+      "command": "./android-emu.sh screenshot ${workspaceFolder}/screen.png",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Emulator: install APK",
+      "type": "shell",
+      "command": "./android-emu.sh install ${input:apkPath}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Emulator: stop",
+      "type": "shell",
+      "command": "./android-emu.sh stop",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "apkPath",
+      "type": "promptString",
+      "description": "Path to APK in workspace (e.g. app.apk)"
+    }
+  ]
+}
