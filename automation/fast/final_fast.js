@@ -13,7 +13,7 @@ const { exec } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const ROLL_NUMBER = process.argv[2] || process.env.ROLL_NUMBER || '237Z1A05A5';
+const ROLL_NUMBER = process.argv[2] || process.env.ROLL_NUMBER || '237Z1A0575';
 const BASE_URL = 'https://nnrg.beessoftware.cloud/studentselfservice';
 const STEALTH_UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
 const MAX_CAPTCHA_ATTEMPTS = 5;
@@ -67,6 +67,43 @@ function solveCaptcha(imagePath) {
       resolve(r);
     });
   });
+}
+
+// TEST-UPDATE mode: derive writable test values from masked display.
+//   "ka*********@gmail.com" -> "ka@gmail.com" (strip *)
+//   "93******13" -> "93<6 random digits>13" (* -> random 0-9)
+// Overrides: NEW_EMAIL=... NEW_MOBILE=...  Preview only: DRY_RUN=1 (no POST)
+function deriveTestEmail(raw) {
+  const v = (raw || '').trim();
+  if (!v || v.includes('<') || /doesn.t exists/i.test(v)) return '';
+  const at = v.lastIndexOf('@');
+  if (at < 0) return v.replace(/\*/g, '');
+  const local = v.slice(0, at).replace(/\*/g, '');
+  const domain = v.slice(at + 1).replace(/\*/g, '');
+  if (!local || !domain || !domain.includes('.')) return '';
+  return `${local}@${domain}`;
+}
+function deriveTestMobile(raw) {
+  const v = (raw || '').trim();
+  if (!v || v.includes('<') || /doesn.t exists/i.test(v)) return '';
+  let out = '';
+  for (const ch of v) out += (ch === '*') ? String(Math.floor(Math.random() * 10)) : ch;
+  return out.replace(/\D/g, '');
+}
+// Direct API save: same endpoint the UI's $.ajax calls, same session cookies.
+// Skips edit/fill/click + YES/NO popups (all client-only). Sequential like UI.
+async function apiSaveEmailMobile(page, mobile, email) {
+  return await page.evaluate(async ({ m, e }) => {
+    const body = new URLSearchParams({ Mobile: m, Email: e });
+    const r = await fetch('/studentselfservice/Login/Login_SaveEmailMobile', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+      body,
+      credentials: 'same-origin',
+    });
+    const txt = await r.text().catch(() => '');
+    return { status: r.status, body: (txt || '').slice(0, 800) };
+  }, { m: mobile, e: email });
 }
 
 (async () => {
@@ -131,37 +168,41 @@ function solveCaptcha(imagePath) {
     await page.locator('#Otpcard').waitFor({ state: 'visible', timeout: 15000 });
     await shot(page, '07_otp_screen', true); await saveRaw(page, '07_otp_screen', true);
 
-    // email: edit -> same value -> save (wait for real save response)
-    await page.click('#edit-email2');
-    await page.locator('#txt_email').waitFor({ state: 'visible', timeout: 5000 });
-    const emailVal = await page.inputValue('#txt_email').catch(() => '');
-    logLine(`EMAIL copied="${emailVal}"`);
-    if (emailVal) await page.fill('#txt_email', emailVal);
-    await Promise.all([
-      page.waitForResponse((r) => r.url().includes('SaveEmailMobile'), { timeout: 10000 }).catch(() => null),
-      page.click('#save-email2'),
-    ]);
-    await shot(page, '10_email_saved', true);
+    // email + mobile: TEST-UPDATE via direct API (no edit/fill/click, no YES/NO popups)
+    // WARNING: this OVERWRITES the real contact on the server. DRY_RUN=1 previews without POST.
+    const DRY_RUN = process.env.DRY_RUN === '1';
+    const rawEmail = await page.inputValue('#txt_email').catch(() => '');
+    const rawMobile = await page.inputValue('#txt_mobile').catch(() => '');
+    const testEmail = process.env.NEW_EMAIL || deriveTestEmail(rawEmail);
+    const testMobile = process.env.NEW_MOBILE || deriveTestMobile(rawMobile);
+    logLine(`EMAIL raw="${rawEmail}" -> test="${testEmail}"`);
+    logLine(`MOBILE raw="${rawMobile}" -> test="${testMobile}" dryRun=${DRY_RUN}`);
+    const emailOk = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(testEmail);
+    const mobileOk = /^[6-9]\d{9}$/.test(testMobile);
+    if (!emailOk) logLine(`EMAIL derived invalid, will skip: "${testEmail}"`);
+    if (!mobileOk) logLine(`MOBILE derived invalid, will skip: "${testMobile}"`);
+    if (!emailOk && !mobileOk) logLine('Nothing valid to save, just reload');
 
-    // YES -> mobile (auto edit mode) -> same value -> save
-    await page.locator('#confirmPopup-yes').waitFor({ state: 'visible', timeout: 8000 });
-    await page.click('#confirmPopup-yes');
-    await page.locator('#save-mobile2').waitFor({ state: 'visible', timeout: 8000 });
-    const mobileVal = await page.inputValue('#txt_mobile').catch(() => '');
-    logLine(`MOBILE copied="${mobileVal}"`);
-    if (mobileVal) await page.fill('#txt_mobile', mobileVal);
-    await Promise.all([
-      page.waitForResponse((r) => r.url().includes('SaveEmailMobile'), { timeout: 10000 }).catch(() => null),
-      page.click('#save-mobile2'),
-    ]);
-    await shot(page, '15_mobile_saved', true);
+    if (emailOk) {
+      if (DRY_RUN) logLine(`DRY_RUN would POST email: Email=${testEmail}`);
+      else {
+        const r1 = await apiSaveEmailMobile(page, '', testEmail);
+        logLine(`API email save http=${r1.status} body=${r1.body}`);
+        if (r1.status !== 200 || !/Successfully Saved/i.test(r1.body)) throw new Error(`Email save failed: ${r1.body}`);
+      }
+    }
+    if (mobileOk) {
+      if (DRY_RUN) logLine(`DRY_RUN would POST mobile: Mobile=${testMobile}`);
+      else {
+        const r2 = await apiSaveEmailMobile(page, testMobile, '');
+        logLine(`API mobile save http=${r2.status} body=${r2.body}`);
+        if (r2.status !== 200 || !/Successfully Saved/i.test(r2.body)) throw new Error(`Mobile save failed: ${r2.body}`);
+      }
+    }
 
-    // NO on 2nd popup -> login screen
-    try {
-      await page.locator('#confirmPopup-no').waitFor({ state: 'visible', timeout: 8000 });
-      await page.click('#confirmPopup-no');
-      await page.locator('#loginFormMain').waitFor({ state: 'visible', timeout: 10000 });
-    } catch (e) { logLine('2nd popup skipped'); }
+    // back to login (UI did window.location.reload() on NO)
+    await page.reload({ waitUntil: 'domcontentloaded' }).catch(() => {});
+    await page.locator('#loginFormMain').waitFor({ state: 'visible', timeout: 10000 });
     await shot(page, '16_final_login_screen', true); await saveRaw(page, '16_final_login_screen', true);
     logLine(`FINAL loginVisible=${await page.locator('#loginFormMain').isVisible().catch(() => false)}`);
     logLine(`RUN END result=OK in ${((Date.now() - t0) / 1000).toFixed(1)}s`);
