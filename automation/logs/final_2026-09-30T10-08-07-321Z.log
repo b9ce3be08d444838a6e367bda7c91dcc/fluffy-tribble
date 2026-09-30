@@ -1,0 +1,67 @@
+[2026-09-30T10:08:07.647Z] RUN START roll=237Z1A05A5
+[2026-09-30T10:08:07.672Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice
+[2026-09-30T10:08:07.786Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice
+[2026-09-30T10:08:07.817Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/css/stylesheet1.css
+[2026-09-30T10:08:07.818Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/lib/select2/css/select2.min.css
+[2026-09-30T10:08:07.820Z] REQ GET https://beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/CollegeLogos/nnrg0001/loginlogo.jpg
+[2026-09-30T10:08:07.820Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/images/cloud.png
+[2026-09-30T10:08:07.821Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/Login/GetCaptcha
+[2026-09-30T10:08:07.822Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/lib/select2/js/select2.min.js
+[2026-09-30T10:08:07.842Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/css/stylesheet1.css
+[2026-09-30T10:08:07.852Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/images/cloud.png
+[2026-09-30T10:08:07.853Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/lib/select2/css/select2.min.css
+[2026-09-30T10:08:07.881Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/GetCaptcha (png)
+[2026-09-30T10:08:07.932Z] RES 200 https://beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/CollegeLogos/nnrg0001/loginlogo.jpg
+[2026-09-30T10:08:07.933Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/lib/select2/js/select2.min.js
+[2026-09-30T10:08:08.059Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/images/loginhome.JPG
+[2026-09-30T10:08:08.073Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/images/loginhome.JPG
+[2026-09-30T10:08:10.393Z] RAW 01_login_page (143021 chars)
+[2026-09-30T10:08:11.361Z] RAW 02_roll_number_entered (143021 chars)
+[2026-09-30T10:08:11.447Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/Login/GetCaptcha?t=1790762891420
+[2026-09-30T10:08:11.453Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/GetCaptcha?t=1790762891420 (png)
+[2026-09-30T10:08:13.234Z] RAW 03_forgot_password_page (143056 chars)
+[2026-09-30T10:08:15.194Z] CAPTCHA attempt 1 solved=2XT8FU
+[2026-09-30T10:08:16.187Z] REQ POST https://nnrg.beessoftware.cloud/studentselfservice/Login/ValidateCaptcha | post=captcha=2XT8FU
+[2026-09-30T10:08:16.244Z] REQ POST https://nnrg.beessoftware.cloud/studentselfservice/Login/Forgotpassword | post=encryptedData=MWXhcA%2FjyqZ20DKJ%2BnDLin0GAVsx28zbTvqXig56MAzGkl7iLKswaDou99G66qW9
+[2026-09-30T10:08:16.250Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/ValidateCaptcha | body={"status":true,"message":"Captcha verified"}
+[2026-09-30T10:08:17.185Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/Forgotpassword | body={"data":"DuB0IRCyCPmKyYmbXy/0cGOFvTS/fvm/XFkr2FDCvu6El\u002B\u002BnGQ0ZN4T3QouPWDb0sS3Lvr\u002BON4jxuoT7XLN4xm\u002B7KzQN8FSEiDJAAO09K1HtGpQebON9/vWvtDQyNyP8EYBat\u002B9mfzPMO1pJZhkv/O6WmDaFKBJ70GOlyfBRvhnYJfN3uWxRJW1v9pzdD5jJH0XWSxLdOiVkD74xbq8i9kbGuKZEco1hwdG\u002Ba9N6hrqc9gyxCLUhW1\u002BPTRcPqzY5HpMWoJt7hXNcjFqaKSSBMYfWiJbzIFnS/JbTEIGkbcjqsuWrcnWAL8OhpeQN\u002Bh9XLZWn/JUssjaI3uQKgBc0TLy\u002BXw7ySYWmIR60dqAaHjUEF9hhGr6AQUt6J76qL5m6WI5kVymaGxIJ6w6IU6ERt7bPlWO8tKDi5TRJ3xBcy5EMDGjpSk6njbwrAt2V0gNaVo4u6Aq/69T0vKPSdnDcXHCboYeUUQ6xDD4gO/acEEQ\u002B\u002BTAvuKLpqSu2sMyndON3nMgFNmNkr29oHKvw5\u002BePtwx\u002BRsXClQ6Vxj0T3syFzISTEB\u002BY/eoq3WMYZZIJ7afhOUfzMYGiNHQh9HyIuGkbjp4nntHDQGmMTLtOMonCOPA="}
+[2026-09-30T10:08:18.704Z] VERIFY attempt 1 cardHidden=true err=""
+[2026-09-30T10:08:19.004Z] RAW 06_after_verification_attempt1 (143425 chars)
+[2026-09-30T10:08:19.005Z] CAPTCHA ACCEPTED: 2XT8FU
+[2026-09-30T10:08:19.295Z] RAW 07_otp_screen (143425 chars)
+[2026-09-30T10:08:20.663Z] RAW 08_email_edit_enabled (143410 chars)
+[2026-09-30T10:08:20.663Z] EMAIL copied="msudhindragoud@gmail.com"
+[2026-09-30T10:08:21.417Z] RAW 09_email_reentered (143410 chars)
+[2026-09-30T10:08:21.442Z] REQ POST https://nnrg.beessoftware.cloud/studentselfservice/Login/Login_SaveEmailMobile | post=Mobile=&Email=msudhindragoud%40gmail.com
+[2026-09-30T10:08:21.521Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/Login_SaveEmailMobile | body={"status":true,"result":"Record is Successfully Saved"}
+[2026-09-30T10:08:24.224Z] RAW 10_email_saved (143300 chars)
+[2026-09-30T10:08:24.227Z] EMAIL saved, err=""
+[2026-09-30T10:08:26.832Z] RAW 12_after_yes_popup_closed (143285 chars)
+[2026-09-30T10:08:26.835Z] Mobile already in edit mode, skipping EDIT click
+[2026-09-30T10:08:27.192Z] RAW 13_mobile_edit_enabled (143285 chars)
+[2026-09-30T10:08:27.192Z] MOBILE copied="9177323290"
+[2026-09-30T10:08:28.097Z] RAW 14_mobile_reentered (143285 chars)
+[2026-09-30T10:08:28.164Z] REQ POST https://nnrg.beessoftware.cloud/studentselfservice/Login/Login_SaveEmailMobile | post=Mobile=9177323290&Email=
+[2026-09-30T10:08:28.275Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/Login_SaveEmailMobile | body={"status":true,"result":"Record is Successfully Saved"}
+[2026-09-30T10:08:31.425Z] RAW 15_mobile_saved (143291 chars)
+[2026-09-30T10:08:31.429Z] MOBILE saved, err=""
+[2026-09-30T10:08:31.720Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice
+[2026-09-30T10:08:31.735Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice
+[2026-09-30T10:08:31.777Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/css/stylesheet1.css
+[2026-09-30T10:08:31.778Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/css/stylesheet1.css
+[2026-09-30T10:08:31.779Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/lib/select2/css/select2.min.css
+[2026-09-30T10:08:31.779Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/lib/select2/css/select2.min.css
+[2026-09-30T10:08:31.780Z] REQ GET https://beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/CollegeLogos/nnrg0001/loginlogo.jpg
+[2026-09-30T10:08:31.781Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/images/cloud.png
+[2026-09-30T10:08:31.781Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/images/cloud.png
+[2026-09-30T10:08:31.783Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/Login/GetCaptcha
+[2026-09-30T10:08:31.784Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/lib/select2/js/select2.min.js
+[2026-09-30T10:08:31.784Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/lib/select2/js/select2.min.js
+[2026-09-30T10:08:31.792Z] RES 304 https://beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/CollegeLogos/nnrg0001/loginlogo.jpg
+[2026-09-30T10:08:31.795Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/GetCaptcha (png)
+[2026-09-30T10:08:31.855Z] REQ GET https://nnrg.beessoftware.cloud/studentselfservice/images/loginhome.JPG
+[2026-09-30T10:08:31.855Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/images/loginhome.JPG
+[2026-09-30T10:08:34.798Z] 2nd popup dismissed with NO
+[2026-09-30T10:08:37.132Z] RAW 16_final_login_screen (143021 chars)
+[2026-09-30T10:08:37.196Z] FINAL loginVisible=true otpVisible=false
+[2026-09-30T10:08:37.197Z] RUN END result=OK

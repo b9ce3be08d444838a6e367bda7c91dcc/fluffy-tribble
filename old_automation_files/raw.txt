@@ -1,0 +1,2944 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" type="image/png" href="/studentselfservice/favicon.ico" />
+    <link rel="shortcut icon" href="/studentselfservice/favicon.ico" />
+    <style>
+        body {
+            background-image: url("C:\Users\ksaikumar\Downloads\backimg.jpg") !important;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div b-9s34lim015>
+        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8LhQh6W72TpHhfKNhffpWScvq1VxEZz4Qri30s0MD18dtUXqWapMNXerTSraDbV_d94QXrK-bElxumW3mJh7EUJqHzwnfdnZ0rO9R59_BP__BbAky3ThcHhH5wy7zB4vxL6aCACBwb1gJcG3hkt51Z4" />
+
+<html lang="en" hac>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="enc-key" content="b7e151628aed2a6abf7158809cf4f3c762e7160f38b4da56a78e3b8e3ae59cba" />
+    <title>BeeSERP Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/studentselfservice/images/Logo123.png">
+
+    <link href="/studentselfservice/css/stylesheet1.css" rel="stylesheet" />
+    <link href="/studentselfservice/lib/select2/css/select2.min.css" rel="stylesheet" />
+    <style>
+        /* Hide logo only when captcha is visible */
+        body.captcha-active .login-logo {
+            visibility: hidden;
+        }
+
+
+        /* Keep the space occupied */
+        .login-logo {
+            transition: visibility 0.2s;
+        }
+
+
+        /* Captcha image */
+        #forgotPasswordCaptchaImage,
+        #changePasswordCaptchaImage {
+            height: 45px;
+            width: 170px;
+            border: 1px solid #ccc;
+            background: white;
+        }
+
+
+        /* Captcha textbox black text */
+        #txtForgotPasswordCaptcha,
+        #txtChangePasswordCaptcha {
+            color: black !important;
+            background-color: white !important;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+
+            /* placeholder */
+            #txtForgotPasswordCaptcha::placeholder,
+            #txtChangePasswordCaptcha::placeholder {
+                color: #777;
+            }
+
+
+        /* Captcha card position */
+        #ForgotPasswordCaptchaCard,
+        #ChangePasswordCaptchaCard {
+            position: absolute;
+            right: 20px;
+            top: 50px;
+            z-index: 999;
+        }
+
+        .login-card {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-control {
+            box-shadow: none;
+            border-color: #ddd;
+            padding: 10px;
+        }
+
+            .form-control:focus {
+                border-color: #18a99f;
+            }
+
+        .btn {
+            background: #004b8f;
+            border: none;
+            line-height: normal;
+        }
+
+            .btn:hover {
+                background: #f47619;
+            }
+
+        .label {
+            font-size: 12px;
+            color: #333;
+        }
+
+        @media (max-width: 767.98px) {
+            .login-card {
+                max-width: 90%;
+                margin: auto;
+            }
+        }
+
+        #login .container #login-row #login-column #login-box {
+            margin-top: 120px;
+            /*  max-width: 600px; */
+            height: 320px;
+            border: 1px solid #9C9C9C;
+            background-color: #EAEAEA;
+            position: relative;
+            width: 100%;
+        }
+
+            #login .container #login-row #login-column #login-box #login-form {
+                padding: 20px;
+            }
+
+                #login .container #login-row #login-column #login-box #login-form #register-link {
+                    margin-top: -85px;
+                }
+
+        .input-group {
+            position: relative;
+        }
+
+            .input-group .input-group-text {
+                position: absolute;
+                right: 10px; /* Adjust based on how much space you want */
+                top: 50%;
+                transform: translateY(-50%);
+                border-left: none; /* To make sure there's no border between input and icon */
+                background-color: transparent; /* To make the icon background transparent */
+            }
+
+        .height-100 {
+            height: 100vh
+        }
+
+        #Otpcard {
+            width: 400px;
+            border: none;
+            height: 300px;
+            box-shadow: 0px 5px 20px 0px #d2dae3;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+            #Otpcard h6 {
+                color: red;
+                font-size: 20px
+            }
+
+        .inputs input {
+            width: 40px;
+            height: 40px
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 0
+        }
+
+        .card-2 {
+            background-color: #fff;
+            padding: 10px;
+            width: 350px;
+            height: 100px;
+            bottom: -50px;
+            left: 20px;
+            position: absolute;
+            border-radius: 5px
+        }
+
+            .card-2 .content {
+                margin-top: 50px
+            }
+
+                .card-2 .content a {
+                    color: red
+                }
+
+        .form-control:focus {
+            box-shadow: none;
+            border: 2px solid red
+        }
+
+        .validate {
+            border-radius: 20px;
+            height: 40px;
+            background-color: red;
+            border: 1px solid dodgerblue;
+            width: 140px
+        }
+
+        #btn_resend a:hover {
+            text-decoration: underline;
+        }
+
+        #err_confirmvalidation, #err_confirmvalidation1, #span_Loginpassword {
+            vertical-align: middle;
+            color: red;
+            text-align: center;
+            margin-left: 7px;
+            font-size: 15px;
+        }
+
+        .position-relative {
+            position: relative;
+        }
+
+        .eye-icon1 {
+            position: absolute;
+            right: 45px;
+            top: 45%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+
+
+        /* ================= Forgot Password Captcha Security Verification Design ================= */
+
+        body.captcha-show #loginFormMain {
+            display: none !important;
+        }
+
+        body.captcha-show .beeserp-login-right-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #86a9bb;
+        }
+
+        #ForgotPasswordCaptchaCard {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+            transform: none !important;
+            width: 300px !important;
+            max-width: 300px;
+            z-index: 99999;
+        }
+
+            #ForgotPasswordCaptchaCard .card {
+                background: #ffffff !important;
+                border-radius: 10px !important;
+                padding: 20px !important;
+                border: none !important;
+                box-shadow: 0px 4px 15px rgba(0,0,0,0.20);
+            }
+
+            #ForgotPasswordCaptchaCard h5 {
+                font-size: 15px;
+                font-weight: 700;
+                color: #1f2937;
+                line-height: 18px;
+            }
+
+                #ForgotPasswordCaptchaCard h5:before {
+                    content: "🛡";
+                    display: block;
+                    font-size: 22px;
+                    margin-bottom: 8px;
+                }
+
+        #forgotPasswordCaptchaImage {
+            width: 150px !important;
+            height: 45px !important;
+            border-radius: 4px;
+            border: 1px solid #ddd !important;
+            background: #ffffff;
+        }
+
+        #refreshForgotPasswordCaptcha {
+            width: 35px;
+            height: 35px;
+            padding: 0;
+            background: #0057a8 !important;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #txtForgotPasswordCaptcha {
+            height: 35px;
+            font-size: 12px;
+            color: black !important;
+            background: white !important;
+            border: 1px solid #d1d5db !important;
+            border-radius: 4px;
+        }
+
+        #btnVerifyForgotPasswordCaptcha {
+            height: 35px;
+            width: 160px;
+            display: block;
+            margin: 15px auto 0;
+            background: #0057a8 !important;
+            border: none;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+    </style>
+
+    <style>
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .square-button {
+            width: 25px;
+            height: 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            transition: background-color 0.2s;
+        }
+
+        .edit-button {
+            background-color: #3498db;
+        }
+
+            .edit-button:hover {
+                background-color: #2980b9;
+            }
+
+        .save-button {
+            background-color: #2ecc71;
+        }
+
+            .save-button:hover {
+                background-color: #27ae60;
+            }
+
+        .cancel-button {
+            background-color: #e74c3c;
+        }
+
+            .cancel-button:hover {
+                background-color: #c0392b;
+            }
+    </style>
+
+    <!--    Styles for for confirmation dialog asking user to save Mobile / Email   -->
+    <!--    Added by Rohit on 21-10-2025    -->
+    <style>
+        .confirmPopup-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;
+        }
+
+        .confirmPopup-box {
+            background: #fff;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            animation: confirmPopup-pop 0.2s ease;
+        }
+
+        @keyframes confirmPopup-pop {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .confirmPopup-buttons {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-around;
+        }
+
+            .confirmPopup-buttons button {
+                padding: 6px 18px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: 500;
+            }
+
+        #confirmPopup-yes {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #confirmPopup-no {
+            background-color: #dc3545;
+            color: white;
+        }
+
+            #confirmPopup-yes:hover,
+            #confirmPopup-no:hover {
+                opacity: 0.9;
+            }
+
+        .loader-content {
+            margin: 0;
+            text-align: center;
+        }
+
+        .custom-loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 99999;
+            background: white;
+            color: black;
+            padding: 20px;
+        }
+
+        div#otp .rounded {
+            border: 1px solid black;
+            color: black;
+        }
+
+        #togglePassword, #toggleConfirmPassword {
+            position: relative;
+            z-index: 2; /* Brings the eye icon above the input's focus shadow */
+        }
+
+            /* Optional: Ensure the icon stays clickable and visible */
+            #togglePassword i, #toggleConfirmPassword i {
+                pointer-events: none; /* Prevents icon from blocking clicks if needed */
+            }
+
+        #txt_NewPasswordchange, #txt_ConfirmPasswordchange {
+            border: 0.12rem solid black;
+            color: black;
+        }
+        /* Fix missing right border in input-group */
+        .input-group .form-control {
+            border-right: 1px solid #ced4da; /* Matches default border color */
+        }
+
+        /* Ensure addon doesn't hide the border */
+        .input-group-append .input-group-text {
+            border-left: none;
+            background-color: #fff;
+            z-index: 3;
+        }
+
+        /* Keep border visible on focus */
+        .input-group .form-control:focus {
+            z-index: 1;
+            border-right: 1px solid #80bdff; /* Matches focus color */
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+    </style>
+
+    <!--Password and Change Password styles-->
+    <style>
+        .password-wrapper {
+            position: relative;
+        }
+
+            .password-wrapper input {
+                padding-right: 40px; /* space for the eye icon */
+            }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6c757d;
+        }
+
+            .toggle-password:hover {
+                color: #000;
+            }
+
+        #ForgetPassWordPassword::-webkit-input-placeholder,
+        #ForgetPassWordConfirmpassword::-webkit-input-placeholder {
+            color: black;
+        }
+
+        /* Firefox */
+        #ForgetPassWordPassword::-moz-placeholder,
+        #ForgetPassWordConfirmpassword::-moz-placeholder {
+            color: black;
+        }
+
+        #forgetPasswordForm .form-control {
+            border-right: unset;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <div class="beeserp-login-wrapper position-relative">
+        <div class="beeserp-login-left-panel" style="background: url('/studentselfservice/images/loginhome.JPG')
+           center/cover no-repeat scroll !important;">
+
+        </div>
+
+        <div id="forgotPasswordLoader1" class="custom-loader" style="display: none;" role="status">
+            <div class="loader-content">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading...</p>
+            </div>
+        </div>
+
+        <div class="beeserp-login-right-panel">
+            <div class="beeserp-login-card" id="loginFormMain">
+                <img src="https://beessoftware.cloud/CloudilyaFileSource/CloudilyaDeployement/CollegeLogos/nnrg0001/loginlogo.jpg"
+                     alt="Logo"
+                     class="logo-top rounded-1"
+                     onerror="this.onerror=null; this.src='/studentselfservice/images/beeslogo.jpg';" />
+                <p class="beeserp-login-title">Login</p>
+                <form method="post" id="loginFormElement" role="form" action="/studentselfservice/Login/Login">
+                    
+                    <div class="beeserp-input-wrapper">
+                        <label>User Name</label>
+                            <input type="text" name="UserName" id="txt_UserName" class="form-control" required autocomplete="off" placeholder="Username" value="">
+                            <span class="text-danger err-username d-none">please enter the username</span>
+                    </div>
+                    <div class="beeserp-input-wrapper">
+
+                        <label>Password</label>
+                            <input type="password" name="password" id="txt_Password" required class="form-control" placeholder="Password" value="" style="padding-right: 45px;">
+                            <span class="text-danger err-password d-none">please enter the password</span>
+                        <div class="beeserp-toggle-password" style=" position: absolute; top: 55%; right: 5%;">
+                            <i class="fas fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+                    <div class="beeserp-remember-section">
+                        <label class="beeserp-toggle-switch">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span class="beeserp-slider"></span>
+                        </label>
+                        <span style="font-weight: 500;">Remember Me</span>
+                    </div>
+                    <div class="form-group form-check">
+                        <div id="forgotPasswordLoader" class="spinner-border text-primary mt-1 ml-4" style="display: none;margin-left:100px;" role="status">
+                            <span class="sr-only">Processing...</span>
+                        </div>
+                    </div>
+                    <label for="myValue" style="vertical-align: middle; color: red;text-align: center;" id="span_invalid"></label>
+                    <button type="submit" id="btn_Login" class="beeserp-login-btn">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </button>
+                    <a href="#" class="beeserp-forgot-link" id="lbl_forgotpassword">
+                        <i class="fas fa-question-circle me-1"></i>Forgot Password?
+                    </a>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8LhQh6W72TpHhfKNhffpWScvq1VxEZz4Qri30s0MD18dtUXqWapMNXerTSraDbV_d94QXrK-bElxumW3mJh7EUJqHzwnfdnZ0rO9R59_BP__BbAky3ThcHhH5wy7zB4vxL6aCACBwb1gJcG3hkt51Z4" /></form>
+                <img src="/studentselfservice/images/cloud.png" alt="CloudLiya Logo" class="logo-bottom">
+
+                <!-- Mobile App Download Section -->
+                <div class="mobile-app-inline">
+                    <div class="app-title">Get Cloudliya Mobile App</div>
+
+
+                    <div class="store-buttons">
+                        <!-- Google Play -->
+                        <a href="https://play.google.com/store/apps/details?id=com.cloudilya.cloudilya"
+                           class="store-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg class="store-icon" viewBox="0 0 512 512" width="22" height="22" aria-label="Google Play">
+                                <g>
+                                    <path fill="#00A0FF"
+                                          d="M48 56v400c0 17.7 18.8 28.9 34.2 20.3l206.4-206.4L82.2 35.7C66.8 27.1 48 38.3 48 56z" />
+                                    <path fill="#00E676"
+                                          d="M345.6 316.8l-57.6-57.6-57.6 57.6 57.6 57.6z" />
+                                    <path fill="#FFEA00"
+                                          d="M400.4 256c0-8.4-4.4-16.1-11.6-20.4l-77.6-44.8-69.2 69.2 69.2 69.2 77.6-44.8c7.2-4.3 11.6-12 11.6-20.4z" />
+                                    <path fill="#FF3D00"
+                                          d="M82.2 476.3l206.4-206.4-57.6-57.6L82.2 476.3z" />
+                                </g>
+                            </svg>
+
+
+
+                            <div class="text">
+                                <div class="line1">GET IT ON</div>
+                                <div class="line2">Google Play</div>
+                            </div>
+                        </a>
+
+
+                        <!-- App Store -->
+                        <a href="https://apps.apple.com/in/app/cloudilya-scholar/id6738577876"
+                           class="store-btn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg class="store-icon" viewBox="0 0 384 512" width="22" height="22" aria-label="App Store">
+                                <path fill="#ffffff" d="M318.7 268.6c-.4-44.9 36.6-66.4 38.3-67.4-20.9-30.6-53.5-34.8-65.1-35.3-27.7-2.8-54.1 16.4-68.2 16.4-14 0-35.8-16-58.8-15.6-30.2.5-58 17.6-73.6 44.8-31.4 54.5-8 135.2 22.6 179.4 15 21.6 32.9 45.9 56.4 45 22.7-.9 31.3-14.7 58.8-14.7s35.3 14.7 59.3 14.3c24.6-.4 40.1-22.4 55-44.1 17.2-25.1 24.3-49.4 24.6-50.7-.5-.2-47.2-18.1-47.7-71.1zM259.6 93.7c12.5-15.1 20.9-36.1 18.6-57.1-18 .7-39.7 12-52.6 27.1-11.6 13.3-21.8 34.7-19 55.1 20.1 1.6 40.5-10.3 53-25.1z" />
+                            </svg>
+
+                            <div class="text">
+                                <div class="line1">Download on the</div>
+                                <div class="line2">App Store</div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="login-card w-100" style="max-width: 400px;" id="ForgetPassWordlogin">
+                <div class="card shadow p-4" style="border-radius: 8px; background-color: #ffffff;">
+                    <div class="text-center">
+                        <h4 class="text-center  pt-5">Change Password</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post" class="d-grid gap-3" role="form" id="forgetPasswordForm" action="/studentselfservice">
+                            
+
+                            <label for="ForgetPassWordPassword" class="label text-black">Password</label>
+                            <div class="password-wrapper" style="width: 34vh;">
+                                <input type="password" name="password" id="ForgetPassWordPassword" required class="form-control" placeholder="Password" />
+                                <i class="fa-solid fa-eye-slash toggle-password"></i>
+                            </div>
+                            <span class="text-danger" id="span_forgetPassword"></span>
+
+                            <label for="ForgetPassWordConfirmpassword" class="label text-black">Confirm Password</label>
+                            <div class="password-wrapper" style="width: 34vh;">
+                                <input type="password" name="ConfirmPassword" id="ForgetPassWordConfirmpassword" required class="form-control" placeholder="Confirm Password" />
+                                <i class="fa-solid fa-eye-slash toggle-password"></i>
+                            </div>
+                            <span class="text-danger" id="span_forgetConfirmPassword"></span>
+
+                            <button type="submit" name="" id="btn_ForgetLogin" class="btn btn-primary btn-block">Submit</button>
+                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8LhQh6W72TpHhfKNhffpWScvq1VxEZz4Qri30s0MD18dtUXqWapMNXerTSraDbV_d94QXrK-bElxumW3mJh7EUJqHzwnfdnZ0rO9R59_BP__BbAky3ThcHhH5wy7zB4vxL6aCACBwb1gJcG3hkt51Z4" /></form>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="login-card w-100" style="max-width:400px;display:none;" id="ForgotPasswordCaptchaCard">
+                <div class="card shadow p-4">
+                    <h5 class="text-center">Security Verification</h5><p class="text-center" style="font-size:11px;color:#777;">Complete this security check to continue with your password reset.</p>
+                    <div class="d-flex align-items-center mt-3">
+                        <img id="forgotPasswordCaptchaImage"
+                             src="/studentselfservice/Login/GetCaptcha"
+                             style="height:45px;width:160px;border:1px solid #ddd;" />
+                        <button type="button" id="refreshForgotPasswordCaptcha"
+                                class="btn btn-secondary ms-2">
+                            ↻
+                        </button>
+                    </div>
+                    <input type="text" id="txtForgotPasswordCaptcha"
+                           class="form-control mt-3"
+                           placeholder="Enter Captcha" style="border: 1px solid black;" />
+                    <span id="forgotPasswordCaptchaError" class="text-danger"></span>
+                    <button type="button" id="btnVerifyForgotPasswordCaptcha"
+                            class="btn btn-primary mt-3">
+                        Verify
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="login-card w-100" style="max-width: 400px;" id="ChangePasswordOtpcard">
+                <div class="card shadow p-4" style="border-radius: 8px; background-color: #ffffff;">
+
+                    <div class="card" id="">
+                        <div class="position-relative">
+                            <div class="p-2 text-center">
+                                <h6>Please Enter OTP </h6>
+
+                                <div> <span>OTP Sent to registered Email and Mobile</span> </div>
+                                <label style="color: black;">Email:</label>
+                                <input placeholder="Email" class="form-cntrol form-control-sm" id="txt_changepasswordemail" style="border: none !important" name="no-autofill-email" autocomplete="new-password" disabled />
+
+                                <button id="edit-email" class="square-button edit-button edit-email" title="Edit">✎</button>
+                                <button id="save-email" class="square-button save-button save-email" title="Save" style="display:none;">✔</button>
+                                <button id="cancel-email" class="square-button cancel-button cancel-email" title="Cancel" style="display:none;">✖</button><br />
+
+                                <div><span id="err-email" class="text-danger"></span></div>
+
+                                <label style="color: black;">Mobile</label>
+                                <input type="tel" placeholder="Mobile" class="form-cntrol form-control-sm" id="txt_changepasswordmobile" style="border: none !important" inputmode="numeric" maxlength="10" minlength="10" autocomplete="new-password" name="no-autofill-phone" disabled />
+
+                                <button id="edit-mobile" class="square-button edit-button edit-mobile" title="Edit">✎</button>
+                                <button id="save-mobile" class="square-button save-button save-mobile" title="Save" style="display:none;">✔</button>
+                                <button id="cancel-mobile" class="square-button cancel-button cancel-mobile" title="Cancel" style="display:none;">✖</button>
+
+                                <div><span id="err-mobile" class="text-danger"></span></div>
+
+
+
+                                <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
+                                    <input class="m-2 text-center form-control rounded checkFilledChangePassword" type="text" id="cpfirst" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilledChangePassword" type="text" id="cpsecond" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilledChangePassword" type="text" id="cpthird" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilledChangePassword" type="text" id="cpfourth" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilledChangePassword" type="text" id="cpfifth" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilledChangePassword" type="text" id="cpsixth" maxlength="1" autocomplete="one-time-code" />
+                                </div>
+                                <div class="mt-4">
+                                    <button class="btn px-4 validate" style="background-color:dodgerblue;" id="btn_ChangePasswordOTP"><p style="margin-top:2px;color:white;">Submit</p></button>
+                                    <a href="#" id="btn_resendotpchangepassword" style="color: red;text-decoration:underline;"> &nbsp;&nbsp;Resend OTP</a>
+                                </div>
+                                <span id="err_otpmsgchangepassword" style="color: red; display: flex; justify-content: center; font-size:18px;"></span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="login-card w-100" style="max-width: 400px;" id="Otpcard">
+                <div class="card shadow p-4" style="border-radius: 8px; background-color: #ffffff;">
+
+                    <div class="card" id="">
+                        <div class="position-relative">
+                            <div class="p-2 text-center">
+                                <div id="timer">Time left: </div>
+                                <h6>Please Enter OTP </h6>
+
+
+                                <div> <span>OTP Sent to registered Email and Mobile</span> </div>
+                                <label style="color: black;">Email:</label>
+                                <input placeholder="Email" class="form-cntrol form-control-sm" id="txt_email" style="border: none !important" name="no-autofill-email" autocomplete="new-password" disabled />
+
+                                <button id="edit-email2" class="square-button edit-button edit-email2" title="Edit">✎</button>
+                                <button id="save-email2" class="square-button save-button save-email2" title="Save" style="display:none;">✔</button>
+                                <button id="cancel-email2" class="square-button cancel-button cancel-email2" title="Cancel" style="display:none;">✖</button><br />
+
+                                <div><span id="err-email2" class="text-danger"></span></div>
+
+                                <label style="color: black;">Mobile</label>
+                                <input type="tel" placeholder="Mobile" class="form-cntrol form-control-sm" id="txt_mobile" style="border: none !important" inputmode="numeric" maxlength="10" minlength="10" autocomplete="new-password" name="no-autofill-phone" disabled />
+                                <button id="edit-mobile2" class="square-button edit-button edit-mobile2" title="Edit">✎</button>
+                                <button id="save-mobile2" class="square-button save-button save-mobile2" title="Save" style="display:none;">✔</button>
+                                <button id="cancel-mobile2" class="square-button cancel-button cancel-mobile2" title="Cancel" style="display:none;">✖</button>
+
+                                <div><span id="err-mobile2" class="text-danger"></span></div>
+
+                                <div id="otp" class="inputs d-flex flex-row justify-content-center mt-2">
+                                    <input class="m-2 text-center form-control rounded checkFilled" type="text" id="first" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilled" type="text" id="second" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilled" type="text" id="third" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilled" type="text" id="fourth" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilled" type="text" id="fifth" maxlength="1" autocomplete="one-time-code" />
+                                    <input class="m-2 text-center form-control rounded checkFilled" type="text" id="sixth" maxlength="1" autocomplete="one-time-code" />
+                                </div>
+                                <div class="mt-4">
+                                    <button class="btn px-4 validate" style="background-color:dodgerblue;" id="btn_OTP"><p style="margin-top:2px;color:white;">Submit</p></button>
+                                    <a href="#" id="btn_resend" style="color: red;text-decoration:underline;"> &nbsp;&nbsp;Resend OTP</a>
+                                </div>
+                            </div>
+                            <span id="err_otpmsg" style="color: red; display: flex; justify-content: center; font-size:18px;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Change password</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="passwordchange-card mx-auto" style="max-width: 350px;">
+                                <div class="card-body">
+                                    <div id="loginForm" class="mt-2" style="max-width: 350px;">
+
+                                        <form method="post" class="d-grid gap-3 mt-3" role="form" action="/studentselfservice/Login/ChangePassword">
+                                            
+                                            <div class="form-group position-relative">
+                                                <label for="New Password" class="text-left label text-black">New Password</label>
+                                                <input type="password" name="New Password" id="txt_NewPasswordchange" required class="form-control label" placeholder="New Password">
+                                                <i class="fas fa-eye-slash position-absolute eye-icon mt-2" id="toggleNewPassword2"></i> <!-- Eye icon for New Password -->
+                                                <span id="error_NewPasswordchange" class="text-danger d-none2" role="alert"></span>
+                                            </div>
+
+                                            <div class="form-group position-relative">
+                                                <label for="Confirm Password" class="text-left label text-black">Confirm Password</label>
+                                                <input type="password" name="Confirm Password" id="txt_ConfirmPasswordchange" required class="form-control label" placeholder="Confirm Password">
+                                                <i class="fas fa-eye-slash position-absolute eye-icon mt-2" id="toggleConfirmPassword2"></i> <!-- Eye icon for Confirm Password -->
+                                                <span id="error_ConfirmPasswordchange" class="text-danger d-none3" role="alert"></span>
+                                            </div>
+
+                                            <button type="submit" name="login" id="btn_submit" class="btn btn-primary btn-block">Submit</button>
+                                        <input name="__RequestVerificationToken" type="hidden" value="CfDJ8LhQh6W72TpHhfKNhffpWScvq1VxEZz4Qri30s0MD18dtUXqWapMNXerTSraDbV_d94QXrK-bElxumW3mJh7EUJqHzwnfdnZ0rO9R59_BP__BbAky3ThcHhH5wy7zB4vxL6aCACBwb1gJcG3hkt51Z4" /></form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--    confirmation modal popup for saving Contact details(Email/Mobile)   -->
+        <!--    Added by Rohit on 21-10-2025    -->
+        <div id="confirmPopup-overlay" class="confirmPopup-overlay">
+            <div class="confirmPopup-box">
+                <p id="confirmPopup-message">Are you sure?</p>
+                <div class="confirmPopup-buttons">
+                    <button id="confirmPopup-yes">Yes</button>
+                    <button id="confirmPopup-no">No</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/studentselfservice/lib/select2/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script>
+                const EncryptionHelper = (() => {
+            const keyHex = document.querySelector('meta[name="enc-key"]').content;
+
+            function encrypt(data) {
+                const str = typeof data === "string" ? data : JSON.stringify(data);
+
+                // ✅ Parse key fresh each time
+                const key = CryptoJS.enc.Hex.parse(keyHex);
+
+                // ✅ Generate a random IV explicitly — don't let CryptoJS auto-generate
+                const iv = CryptoJS.lib.WordArray.random(16);
+
+                const encrypted = CryptoJS.AES.encrypt(str, key, {
+                    iv:      iv,                  // ✅ pass IV explicitly
+                    mode:    CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7
+                });
+
+                // ✅ Prepend IV to ciphertext — matches C# Buffer.BlockCopy
+                const combined = CryptoJS.enc.Hex.parse(
+                    iv.toString() + encrypted.ciphertext.toString()
+                );
+                return CryptoJS.enc.Base64.stringify(combined);
+            }
+
+            function decrypt(encryptedBase64) {
+                const key = CryptoJS.enc.Hex.parse(keyHex);
+
+                const combined = CryptoJS.enc.Base64.parse(encryptedBase64);
+                const hexStr   = combined.toString(CryptoJS.enc.Hex);
+
+                // ✅ First 32 hex chars = 16 bytes = IV
+                const iv         = CryptoJS.enc.Hex.parse(hexStr.substring(0, 32));
+                const ciphertext = CryptoJS.enc.Hex.parse(hexStr.substring(32));
+
+                const decrypted = CryptoJS.AES.decrypt(
+                    { ciphertext: ciphertext },
+                    key,
+                    {
+                        iv:      iv,
+                        mode:    CryptoJS.mode.CBC,
+                        padding: CryptoJS.pad.Pkcs7
+                    }
+                );
+
+                return decrypted.toString(CryptoJS.enc.Utf8);
+            }
+
+            return { encrypt, decrypt };
+        })();
+    </script>
+
+    <script>
+        var forgotPasswordCaptchaVerified = false;
+        var mobile = "";
+        var email = "";
+        var enteredOTP = "", enteredOTPChangePassword = "";
+        var OTP = '', otpnumber = "", grpcode = "";
+        var grpCodeOtp = '', colCodeOtp = '',
+
+
+        Otp = '', emailOtp = '', mobileOtp = '', otpUser = '';
+
+        function LoadForgotPasswordCaptcha() {
+            var captchaUrl = '/studentselfservice/Login/GetCaptcha';
+
+            $("#forgotPasswordCaptchaImage")
+                .attr("src", captchaUrl + "?t=" + new Date().getTime());
+
+            $("#txtForgotPasswordCaptcha").val("");
+            $("#forgotPasswordCaptchaError").text("");
+        }
+
+        $("#refreshForgotPasswordCaptcha").click(function () {
+            LoadForgotPasswordCaptcha();
+        });
+
+        $("#btnVerifyForgotPasswordCaptcha").click(function () {
+
+            var captcha = $("#txtForgotPasswordCaptcha").val();
+
+            if (captcha == "") {
+                $("#forgotPasswordCaptchaError").text("Enter captcha");
+                return;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/studentselfservice/Login/ValidateCaptcha",
+                data: { captcha: captcha },
+                success: function (response) {
+
+                    if (response.status == true) {
+
+                        forgotPasswordCaptchaVerified = true;
+
+                        $("#ForgotPasswordCaptchaCard").hide();
+                        $("body").removeClass("captcha-show");
+                        $("#loginFormMain").show();
+
+                        // trigger the existing OTP flow again
+                        $("#lbl_forgotpassword").data("captchaVerified", true).trigger("click");
+
+                    }
+                    else {
+                        forgotPasswordCaptchaVerified = false;
+                        $("#forgotPasswordCaptchaError").text("Invalid Captcha");
+                        LoadForgotPasswordCaptcha();
+                    }
+                }
+            });
+        });
+
+
+        $(document).ready(function() {
+            var colcode = $('#userid').val();
+            if (colcode == "Session Expired") {
+
+                alert("Session Expired Login Again");
+            }
+            var otpTimer;
+
+            var otpTimerRunning = false; // Flag to indicate whether the OTP timer is running
+            $('#test').select2();
+            $("#timer").hide();
+
+            // Remove classes 'btndiv' and 'btndiv1' from elements with IDs 'btndiv' and 'btndiv1'
+            $('#btn_Backs, #btn_Backs1').removeClass('btndiv btndiv1');
+            $('#ChangePasswordOtpcard').hide();
+            $("#btn_Backs").hide();
+            $("#btn_Backs1").hide();
+            $("#ForgetPassWordlogin").hide();
+            $("#Otpcard").hide();
+            // Set input values to empty strings
+            // $("#txt_UserName").val("");
+            // $("#txt_Password").val("");
+            var oldpassword = "";
+            var colCode1 = '';
+            var collegeId = '';
+            var userName = '';
+            var userType = '';
+            var messageInvalid = '';
+
+            //======Back button for otp form to login form=============//
+            $(document).on('click', '#btn_Backs', function(e) {
+                if (!otpTimerRunning) {
+                    switchForm3("#otpForm", "#loginForm");
+                    // Remove classes 'btndiv' and 'btndiv1' from elements with IDs 'btndiv' and 'btndiv1'
+                    $('#btn_Backs, #btn_Backs1').removeClass('btndiv btndiv1');
+                    $("#btn_Backs").hide();
+                    $("#btn_Backs1").hide();
+                    $("#timer").hide();
+                }
+            });
+            //======Back button for otp form to login form=============//
+            $(document).on('click', '#btn_Backs1', function(e) {
+                switchForm4("#changePasswordForm", "#otpForm");
+                //Add class to btndiv
+                $('#btn_Backs').addClass('btndiv');
+                // Remove class from btndiv1
+                $('#btn_Backs1').removeClass('btndiv1');
+                $("#btn_Backs").show();
+                $("#btn_Backs1").hide();
+                $("#timer").show();
+            });
+
+            // Username keyup event for real-time validation
+            $('#txt_UserName').keyup(function() {
+                var errorTooltip = $("#error_UserName");
+                errorTooltip.text($(this).val().trim() === "" ? "Enter username." : "").toggleClass('d-none', $(this).val().trim() !== "");
+            });
+
+            $('#ForgetPassWordPassword').keyup(function() {
+                $("#togglePassword").show();
+            });
+
+
+            //================ Forgot Password link Click functionality==================//
+            $(".link-secondary").on("click", function(e) {
+                e.preventDefault();
+
+                var valid = ForGotPasswordValidations();
+                if (valid) {
+
+                    $.ajax({
+                        type: "get",
+                        dataType: "JSON",
+                        url: "/studentselfservice/Login/ForgotpasswordClickFunctionality",
+                        data: {
+                            UserName: $("#txt_UserName").val()
+                        },
+                        success: function(response) {
+                            if (response.status == true) {
+                                $("#loadingOverlay").removeClass("d-none");
+                                //switchForm("#loginForm", "#otpForm");
+                                $.ajax({
+                                    type: "Post",
+                                    dataType: "JSON",
+                                    url: "/studentselfservice/Login/GetOTPFunctionality",
+                                    success: function(response) {
+                                        if (response.status == true) {
+                                            if (response.result == "OTP sent Your Mobile") {
+                                                // Hide loading overlay on success
+                                                $("#loadingOverlay").addClass("d-none");
+                                                $("#txt_UserName1").val($("#txt_UserName").val());
+                                                $("#txt_OTP").val("");
+                                                switchForm("#loginForm", "#otpForm");
+                                                //Add class to btndiv
+                                                $('#btn_Backs').addClass('btndiv');
+                                                // Remove class from btndiv1
+                                                $('#btn_Backs1').removeClass('btndiv1');
+                                                // $("#btndiv").show();
+                                                // $("#btndiv1").hide();
+                                                $("#btn_Backs").show();
+                                                $("#btn_Backs1").hide();
+                                                $("#timer").show();
+                                                $.notify(response.result, {
+
+                                                    globalPosition: 'top right',
+                                                    className: 'success',
+
+                                                })
+                                                otpTimerRunning = true;
+                                                handleOtpSent(); // Start the timer when OTP is sent
+
+                                            }
+                                            else {
+                                                $.notify(response.result, {
+                                                    globalPosition: 'top right',
+                                                    className: 'success',
+                                                })
+                                            }
+                                        }
+                                        else {
+                                            $.notify(response.result, {
+                                                globalPosition: 'top right',
+                                                className: 'success',
+                                            })
+                                        }
+                                    },
+                                    error: function(xhr, status, error) {
+                                    }
+                                });
+                            }
+                            else {
+                                var errorTooltip = $("#error_UserName");
+                                errorTooltip.text(response.result).removeClass('d-none');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                        }
+                    });
+                }
+            });
+
+            const otpInputs = document.querySelectorAll(".checkFilled");
+
+            otpInputs.forEach(input => {
+                input.addEventListener("keydown", function(event) {
+                    if (event.key === " ") {
+                        event.preventDefault(); // Prevent space key from being entered
+                    }
+                });
+            });
+
+            //================OTP Submit  Button Click functionality=============================//
+
+            $("#btn_OTPSubmit").click(function(e) {
+                e.preventDefault(); // Prevent the form from submitting (if you're using a form)
+                // Show loading overlay
+                //$("#loadingOverlay").removeClass("d-none");
+                var valid = OTPValidations();
+                if (valid == true) {
+                    $.ajax({
+                        type: "Post",
+                        dataType: "JSON",
+                        url: "/studentselfservice/Login/Forgotpassword",
+                        data:
+                        {
+                            OTP: $("#txt_OTP").val()
+                        },
+                        success: function(response) {
+                            if (response.status == true) {
+                                if (response.result == "Invalid OTP") {
+                                    $.notify(response.result, {
+                                        globalPosition: 'top right',
+                                        className: 'success',
+                                    })
+                                }
+                                else {
+                                    // Hide loading overlay on success
+                                    // $("#loadingOverlay").addClass("d-none");
+                                    oldpassword = response.result.oldPassword;
+                                    var username = response.result.userName;
+                                    // Store values before switching
+                                    $("#txt_UserName1").val(username);
+                                    $("#txt_NewPassword").val("");
+                                    $("#txt_ConfirmPassword").val("");
+                                    handleOtpSubmit()
+                                    $("#timer").show();
+
+                                    switchForm1("#otpForm", "#changePasswordForm");
+                                    //Add class to btndiv
+                                    $('#btn_Backs').removeClass('btndiv');
+                                    // Remove class from btndiv1
+                                    $('#btn_Backs1').addClass('btndiv1');
+                                    $("#btn_Backs").hide();
+                                    $("#btn_Backs1").show();
+                                }
+                            }
+                            else {
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'success',
+                                })
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                        }
+                    });
+                }
+            });
+
+            //===============OTP Submit  Button Click functionality======================//
+
+            $("#btn_ChangePasswordSave").on("click", function(e) {
+                e.preventDefault(); // Prevent the form from submitting (if you're using a form)
+                // Show loading overlay
+                $("#loadingOverlay").removeClass("d-none");
+                var valid = ChangepasswordValidations();
+                if (valid == true) {
+                    $.ajax({
+                        type: "Post",
+                        dataType: "JSON",
+                        url: "/studentselfservice/Login/ChangePassword",
+                        data: {
+                            UserName: $("#txt_UserName1").val(),
+                            OldPassword: oldpassword,
+                            NewPassword: $("#txt_NewPassword").val(),
+                            ConfirmPassword: $("#txt_ConfirmPassword").val(),
+                        },
+                        success: function(response) {
+                            if (response.status == true) {
+                                if (response.result == "Password Changed Successfully") {
+                                    $.notify(response.result, {
+                                        globalPosition: 'top right',
+                                        className: 'success',
+                                    })
+                                    // Hide loading overlay on success
+                                    $("#loadingOverlay").addClass("d-none");
+                                    switchForm2("#changePasswordForm", "#loginForm");
+                                }
+                                else {
+                                    $.notify(response.result, {
+                                        globalPosition: 'top right',
+                                        className: 'success',
+                                    })
+                                }
+                            }
+                            else {
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'success',
+                                })
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle error response
+                        }
+                    });
+                }
+
+            });
+
+            //  ====================== Forget Password Code======================== //
+
+            var resetToken;
+                    $("#lbl_forgotpassword").click(function () {
+
+            if ($(this).data("captchaVerified") != true) {
+
+                let validCaptchaUser = usernamevalidation();
+
+                if (validCaptchaUser == true) {
+                    $("body").addClass("captcha-show");
+                    $("#ForgotPasswordCaptchaCard").show();
+                    LoadForgotPasswordCaptcha();
+                }
+
+                return;
+            }
+
+            $(this).data("captchaVerified", false);
+
+            let valid = usernamevalidation();
+            if (valid == true) {
+                $("#forgotPasswordOverlay").css("display", "flex");
+                Alltextboxesenter();
+                $(".checkFilled").on("keyup", Alltextboxesenter);
+
+                // ✅ Encrypt before sending
+                var encryptedData = EncryptionHelper.encrypt({
+                    UserName: $("#txt_UserName").val(),
+                });
+
+                $.ajax({
+                    type:     "POST",
+                    dataType: "JSON",
+                    url:      '/studentselfservice/Login/Forgotpassword',
+                    data:     { encryptedData: encryptedData },  // ✅ single encrypted field
+                    success: function (response) {
+                            var decryptedJson = EncryptionHelper.decrypt(response.data);
+        var decrypted     = JSON.parse(decryptedJson);
+
+        // ✅ Handle both PascalCase and camelCase
+        var list = decrypted.passwordDetailsOTPList
+                || decrypted.PasswordDetailsOTPList
+                || [];
+
+        var result1      = decrypted.result1 || decrypted.Result1 || "";
+        var result2      = decrypted.result2 || decrypted.Result2 || "";
+        resetToken      = decrypted.resetToken || decrypted.resetToken || "";
+
+        if (list.length > 0 && result1.length > 0) {
+            var Message      = result1;
+            otpnumber        = result2;
+
+            // ✅ Access from list variable, not decrypted directly
+            grpcode          = list[0].grpCode  || list[0].GrpCode;
+            colCode1         = list[0].colCode  || list[0].ColCode;
+            collegeId        = list[0].collegeId  || list[0].CollegeId;
+            userName         = list[0].userName   || list[0].UserName;
+            userType         = list[0].userType   || list[0].UserType;
+            messageInvalid   = list[0].message    || list[0].Message;
+            email            = list[0].email      || list[0].Email;
+            mobile           = list[0].phoneNumber || list[0].PhoneNumber;
+
+            if (Message === "OTP sent Successfully") {
+                if (list[0].pwChanged || list[0].PwChanged) {
+                    $('#edit-email2, #edit-mobile2').hide();
+                } else {
+                    $('#edit-email2, #edit-mobile2').show();
+                }
+
+                $("#forgotPasswordOverlay").hide();
+                $("#Otpcard").show();
+                $("#ForgetPassWordlogin").hide();
+                $("#logincardconfirm").hide();
+                $("#loginFormMain").hide();
+
+                var Newemail  = "";
+                var NewMobile = "";
+
+                if (email && email.length) {
+                    for (let i = 0; i < email.length; i++) {
+                        Newemail += (i < 2 || i >= email.length - 10) ? email[i] : '*';
+                    }
+                } else {
+                    Newemail = "<email doesn't exists>";
+                }
+
+                if (mobile && mobile.length) {
+                    for (let i = 0; i < mobile.length; i++) {
+                        NewMobile += (i < 2 || i >= mobile.length - 2) ? mobile[i] : '*';
+                    }
+                } else {
+                    NewMobile = "<mobile number doesn't exists>";
+                }
+
+                if (Newemail != "<email doesn't exists>") {
+                    $.notify("OTP sent successfully to your Email", {
+                        globalPosition: 'top right',
+                        className: 'success',
+                        title: "Success"
+                    });
+                }
+
+                $("#txt_email").val(Newemail);
+                $("#txt_mobile").val(NewMobile);
+
+                var timeLeft = 45;
+                var timerInterval = setInterval(function () {
+                    timeLeft--;
+                    $("#timer").text("Time left: " + timeLeft + " seconds");
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        $("#timer").text("Time's up!");
+                        $("#btn_resend").show();
+                        $("#textbox1, #textbox2, #textbox3, #textbox4, #textbox5").val("");
+                    }
+                }, 1000);
+
+            } else if (messageInvalid == "Invalid UserName") {
+                $('#error_usernamemain').text("Invalid UserName");
+                $("#forgotPasswordOverlay").hide();
+                $("#Otpcard").hide();
+                $("#ForgetPassWordlogin").hide();
+                $("#logincardconfirm").hide();
+                $("#loginFormMain").show();
+            }
+        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                        $.notify("An error occurred, please try again later.", {
+                            globalPosition: 'top right',
+                            className: 'error',
+                            title: "Error"
+                        });
+                        $("#forgotPasswordOverlay").hide();
+                    }
+                });
+            }
+        });
+
+            $(".checkFilled").on("keyup", Alltextboxesenter);
+            $(".checkFilledChangePassword").on("keyup", Alltextboxesenterchangepassword);
+
+
+            // Bind click event to the button
+            $("#btn_ForgetLogin").on("click", function (e) {
+            e.preventDefault();
+            let valid = forgetvalidation();
+            if (valid) {
+                // ✅ Encrypt all fields before sending
+                var encryptedData = EncryptionHelper.encrypt({
+                    UserName:        userName,
+                    OldPassword:     "",
+                    NewPassword:     $("#ForgetPassWordPassword").val(),
+                    ConfirmPassword: $("#ForgetPassWordConfirmpassword").val(),
+                    CollegeId:       collegeId,
+                    UserType:        userType,
+                    ColCode:         colCode1,
+                    GrpCode:         grpcode
+                });
+
+                $.ajax({
+                    type:     "POST",
+                    headers:  { 'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val() },
+                    dataType: "JSON",
+                    url:      "/studentselfservice/Login/ForgetChangePassword",
+                    data:     { encryptedData: encryptedData },  // ✅ encrypted
+                    success: function (response) {
+                        // ✅ Decrypt response
+                        var decrypted = JSON.parse(EncryptionHelper.decrypt(response.data));
+
+                        if (decrypted.status == true) {
+                            $.notify(decrypted.result, {
+                                globalPosition: 'top right',
+                                className: 'success'
+                            });
+                            if (decrypted.result == "Password Changed Successfully") {
+                                setTimeout(function () {
+                                    $("#Otpcard").hide();
+                                    $("#ForgetPassWordlogin").hide();
+                                    $("#logincardconfirm").show();
+                                    $("#loginFormMain").show();
+                                    location.reload();
+                                }, 2000);
+                            }
+                        } else {
+                            $.notify(decrypted.result, {
+                                globalPosition: 'top right',
+                                className: 'error'
+                            });
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error:", error);
+                    }
+                });
+            }
+        });
+
+            $("#btn_resend").click(function() {
+                $("#first, #second, #third, #fourth, #fifth,#sixth").val("");
+                $("#btn_resend").show();
+                Alltextboxesenter();
+                Relode();
+                // smsotp();
+                $("#err_otpmsg").hide();
+            })
+            $("#btn_resendotpchangepassword").click(function() {
+                $("#cpfirst, #cpsecond, #cpthird, #cpfourth, #cpfifth,#cpsixth").val("");
+                $("#btn_resend").show();
+                Alltextboxesenterchangepassword();
+                ReloadOtpChangePassword();
+                // smsotp();
+                $("#err_otpmsgchangepassword").hide();
+            })
+            $("#btn_OTP").click(function() {
+                CheckOtp();
+                verifyOTP(enteredOTP);
+                if(!enteredOTP && OTP != enteredOTP){
+                    $('#otp .rounded').css('border', '1px solid red')
+                } else if(enteredOTP && OTP != enteredOTP){
+                    $("#err_otpmsg").text("Invalid OTP").show();
+                    $("#first, #second, #third, #fourth, #fifth,#sixth").val("");
+                }
+                //  $("#txt_ApplicationnoConfirm").val(ConfirmapplicationNumber);
+                // $("#txt_ApplicationnoConfirm").prop("disabled",true);
+            })
+
+            //to verify the entered OTP
+            function verifyOTP(otp) {
+            // ✅ Encrypt OTP before sending
+            var encryptedData = EncryptionHelper.encrypt({ enteredOtp: otp, clientGUID: resetToken });
+
+            $.ajax({
+                type:     "POST",
+                dataType: "JSON",
+                url:      "/studentselfservice/StudentSelfService/VerifyOtp",
+                data:     { encryptedData: encryptedData },  // ✅ encrypted
+                success: function (response) {
+                    // ✅ Decrypt response
+                    var decrypted = JSON.parse(EncryptionHelper.decrypt(response.data));
+
+                    if(decrypted.sessionToken != resetToken){
+                        $.notify("Session expired!", {
+                            globalPosition: 'top right',
+                            className: 'error'
+                        });
+                    }
+
+                    if (decrypted.status && decrypted.sessionToken == resetToken) {
+                        $("#Otpcard").hide();
+                        $("#logincard").hide();
+                        $("#ForgetPassWordlogin").show();
+                        $("#first, #second, #third, #fourth, #fifth, #sixth").val("");
+                        $("#loginFormMain").hide();
+                        $("#ForgetPassWordlogin").show();
+                    } else {
+                        $.notify(decrypted.message || "Invalid OTP", {
+                            globalPosition: 'top right',
+                            className: 'error'
+                        });
+                        $("#first, #second, #third, #fourth, #fifth, #sixth").val("");
+                    }
+                },
+                error: function () {
+                    $.notify("An error occurred while verifying OTP.", {
+                        globalPosition: 'top right',
+                        className: 'error'
+                    });
+                }
+            });
+        }
+
+            $("#btn_ChangePasswordOTP").click(function() {
+                CheckOtpChangePassword();
+                if (otpnumber == enteredOTPChangePassword) {
+                    $("#ChangePasswordOtpcard").hide();
+                    $("#Otpcard").hide();
+                    $("#logincard").hide();
+                    $("#ForgetPassWordlogin").hide();
+                    $("#cpfirst, #cpsecond, #cpthird, #cpfourth, #cpfifth,#cpsixth").val("");
+                    $("#loginFormMain").hide();
+                    $("#ForgetPassWordlogin").hide();
+                    $('#loginModal').modal('show');
+                    // $("#Otpcard").show();
+                }
+                else {
+                    $("#err_otpmsgchangepassword").text("Invalid OTP").show();
+                    $("#first, #second, #third, #fourth, #fifth,#sixth").val("");
+                }
+                //  $("#txt_ApplicationnoConfirm").val(ConfirmapplicationNumber);
+                // $("#txt_ApplicationnoConfirm").prop("disabled",true);
+            })
+
+            $('.btn-close').click(function() {
+                $("#ChangePasswordOtpcard").hide();
+                $("#Otpcard").hide();
+                $("#logincard").hide();
+                $("#ForgetPassWordlogin").hide();
+                $("#loginFormMain").hide();
+                $("#ForgetPassWordlogin").hide();
+                $('#loginModal').modal('hide');
+                $('#loginFormMain').show();
+                $('#error_mainpwd').hide();
+            })
+            // Toggle New Password visibility
+            $('#toggleNewPassword').click(function() {
+                var passwordField = $('#txt_NewPasswordchange');
+                var icon = $(this);
+
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text'); // Show password
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye'); // Change icon to 'eye'
+                } else {
+                    passwordField.attr('type', 'password'); // Hide password
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash'); // Change icon to 'eye-slash'
+                }
+            });
+
+            // Toggle Confirm Password visibility
+            $('#toggleConfirmPassword').click(function() {
+                var passwordField = $('#txt_ConfirmPasswordchange');
+                var icon = $(this);
+
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text'); // Show password
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye'); // Change icon to 'eye'
+                } else {
+                    passwordField.attr('type', 'password'); // Hide password
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash'); // Change icon to 'eye-slash'
+                }
+            });
+
+            $("#togglePassword").on("click", function() {
+                // Get the password input element and the icon
+                var passwordField = $("#ForgetPassWordPassword");
+                var icon = $("#eyeIcon");
+
+                // Toggle the type attribute of the password field
+                if (passwordField.attr("type") === "password") {
+                    passwordField.attr("type", "text");
+                    icon.removeClass("fa-eye").addClass("fa-eye-slash"); // Change the icon to 'eye-slash'
+                } else {
+                    passwordField.attr("type", "password");
+                    icon.removeClass("fa-eye-slash").addClass("fa-eye"); // Change the icon back to 'eye'
+                }
+            });
+
+            // Toggle Confirm Password visibility
+            $("#toggleConfirmPassword").on("click", function() {
+                // Get the confirm password input element and the icon
+                var confirmPasswordField = $("#ForgetPassWordConfirmpassword");
+                var icon1 = $("#eyeIcon1");
+
+                // Toggle the type attribute of the confirm password field
+                if (confirmPasswordField.attr("type") === "password") {
+                    confirmPasswordField.attr("type", "text");
+                    icon1.removeClass("fa-eye").addClass("fa-eye-slash"); // Change the icon to 'eye-slash'
+                } else {
+                    confirmPasswordField.attr("type", "password");
+                    icon1.removeClass("fa-eye-slash").addClass("fa-eye"); // Change the icon back to 'eye'
+                }
+            });
+
+            $("#btn_submit").on("click", function(e) {
+                e.preventDefault(); // Prevent default form submission
+                // Perform password validations
+                var valid1 = ChangepasswordValidations1();
+                if (valid1) {
+                    // If valid, submit data to the server
+                    $.ajax({
+                        type: "POST",
+                        dataType: "JSON",
+                        url: "/studentselfservice/Login/ConfirmChangePassword",
+                        data: {
+                            GrpCode: grpCodeOtp,
+                            NewPW: $("#txt_NewPasswordchange").val(),
+                            ConfirmPassword: $("#txt_ConfirmPasswordchange").val(),
+                            OldPassword: $('#txt_Password').val(),
+                        },
+                        success: function(response) {
+                            //  if (response.status === true) {
+                            // Success notificationbt
+                            if (response.result === "Password Changed Successfully") {
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'success'
+                                });
+                                // Optional: Hide the modal if successful
+                                $('#loginModal').modal('hide');
+                                $('#span_invalid').text('').show();
+                                $("#ChangePasswordOtpcard").hide();
+                                $("#Otpcard").hide();
+                                $("#logincard").hide();
+                                $("#ForgetPassWordlogin").hide();
+                                $("#loginFormMain").hide();
+                                $("#ForgetPassWordlogin").hide();
+                                $('#loginFormMain').show();
+                                $('#txt_Password').val("");
+                                $('#error_mainpwd').hide();
+                            }
+                            //  }
+                            else {
+                                // Error notification
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'error'
+                                });
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle server errors
+                            $.notify("An error occurred while changing the password.", {
+                                globalPosition: 'top right',
+                                className: 'error'
+                            });
+                        }
+                    });
+                }
+            });
+
+        $('#btn_Login').on('click', function(e) {
+            e.preventDefault(); // Prevent default form submission
+            var valid = ForGotPasswordValidations();
+            if (valid) {
+               $("#forgotPasswordLoader1").show();
+                // $("#btn_Login").prop("disabled", true);
+
+                // Collect form data
+                const formData = {
+                    UserName: $('#txt_UserName').val(),
+                    Password: $('#txt_Password').val(),
+                    RememberMe: $('#rememberMe').is(':checked')
+                };
+
+                // Set a flag to indicate user action
+                $("#isUserAction").val("true");
+
+                if (formData.RememberMe) {
+                    // Store credentials in localStorage (Alternatively, you can use cookies)
+                    localStorage.setItem('userName', formData.UserName);
+                    localStorage.setItem('password', formData.Password);
+                } else {
+                    // Remove stored credentials if "Remember Me" is unchecked
+                    localStorage.removeItem('userName');
+                    localStorage.removeItem('password');
+                }
+                Alltextboxesenterchangepassword();
+                $(".checkFilledChangePassword").on("keyup", Alltextboxesenterchangepassword);
+
+                // Make AJAX POST request
+                $.ajax({
+                    url: '/studentselfservice/Login/Login', // Your action URL
+                    type: 'POST',
+                    headers: {
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    data: formData,
+                    success: function(response) {
+                        $("#forgotPasswordLoader1").hide();
+                        // $("#btn_Login").prop("disabled", true);
+                        console.log('Login response:', response);
+                        if (response.success) {
+                            // Redirect if login is successful
+                            window.location.href = response.redirectUrl;
+                        } else {
+                            if(response.errorMessage.includes('password is expired')){
+                                $('#password-expire-modal').modal('show');
+                                $('#pass-expire-msg').text(response.errorMessage);
+                                $('#lbl_forgotpassword').trigger('click');
+                            }
+                            // Display the error message
+                            $('#span_invalid').text(response.errorMessage).show();
+                            response.errorMessage.includes('password is expired') ? $('#span_invalid').text('') : $('#span_invalid').text(response.errorMessage);
+                            $('#error_mainpwd').text(response.errorMessage).show();
+                            // Additional handling based on 'login' and 'reload' values
+                            if (response.login == 1) {
+                                if (response.reload == "Click") {
+                                    grpCodeOtp = response.otpdetails.grpCodeOtp;
+                                    colCodeOtp = response.otpdetails.colCodeOtp;
+                                    colIdOtp = response.otpdetails.colIdOtp;
+                                    emailOtp = response.otpdetails.emailOtp;
+                                    mobileOtp = response.otpdetails.mobileOtp;
+                                    if (mobileOtp == "") {
+                                        alert("You don't have mobile number , please add it")
+                                    }
+                                    otpUser = response.otpdetails.otpUser;
+                                    $.ajax({
+                                        type: "POST",
+                                        dataType: "JSON",
+                                        url: '/studentselfservice/Login/GetOTPFunctionalityChangePassword',
+                                        data: {
+                                            GrpCode: grpCodeOtp,
+                                            ColCode: colCodeOtp,
+                                            CollegeId: colIdOtp,
+                                            UserName: otpUser,
+                                            Mobile: mobileOtp,
+                                            Email: emailOtp
+                                        },
+
+                                        success: function(response) {
+                                            if (response.status == true) {
+                                                otpnumber = response.result;
+                                            }
+                                        },
+                                    })
+                                    $("#Otpcard").hide();
+                                    $("#ForgetPassWordlogin").hide();
+                                    $("#logincardconfirm").hide();
+                                    $("#loginFormMain").hide();
+                                    $('#ChangePasswordOtpcard').show();
+                                    var ChangePasswordEmail = "";
+                                    var ChangePasswordMobile = "";
+                                            if (emailOtp && emailOtp.length) {
+                                                for (let i = 0; i < emailOtp.length; i++) {
+                                                    if (i < 2 || i >= emailOtp.length - 10) {
+                                                        ChangePasswordEmail += emailOtp[i];
+                                                    } else {
+                                                        ChangePasswordEmail += '*';
+                                                    }
+                                                }
+                                            } else {
+                                                ChangePasswordEmail = `<email doesn't exists>`; // or maybe 'N/A'
+                                            }
+
+                                            if (mobileOtp && mobileOtp.length) {
+                                                for (let i = 0; i < mobileOtp.length; i++) {
+                                                    if (i < 2 || i >= mobileOtp.length - 2) {
+                                                        ChangePasswordMobile += mobileOtp[i];
+                                                    } else {
+                                                        ChangePasswordMobile += '*';
+                                                    }
+                                                }
+                                            } else {
+                                                ChangePasswordMobile = `<mobile number doesn't exists>`; // or 'N/A'
+                                            }
+                                    $("#txt_changepasswordemail").val(ChangePasswordEmail);
+                                    $("#txt_changepasswordmobile").val(ChangePasswordMobile);
+                                    var timeLeft = 45;
+                                    // Update the timer every second
+                                    var timerInterval = setInterval(function() {
+                                        // Decrease the time left by 1 second
+                                        timeLeft--;
+                                        // Update the timer display
+                                        $("#timer").text("Time left: " + timeLeft + " seconds");
+
+                                        // If time is up, clear the interval and display a message
+                                        if (timeLeft <= 0) {
+                                            clearInterval(timerInterval);
+                                            $("#timer").text("Time's up!");
+                                            $("#btn_resend").show();
+                                            $("#textbox1, #textbox2, #textbox3, #textbox4, #textbox5").val("");
+                                            // $("#btn_OTP").prop('disabled', true);
+                                            // Optionally, you can trigger an action here when the time is up
+                                        }
+                                    }, 1000); // Execute every 1000 milliseconds (1 second)
+
+
+                                    //$('#loginModal').modal('show');
+                                } else if (response.reload == "Reload" || response.reload == "FreshLoad") {
+                                    $('#loginModal').modal('hide');
+                                }
+                            }
+                            else if (response.reg != "" && response.login != 1) {
+                                let allResults = [];
+                                if (response.reload == "Click") {
+                                    // alert("make payment");
+
+                                    $.ajax({
+                                        url: '/studentselfservice/Login/TempRegistartionPaymentSaving', // Your action URL
+                                        type: 'POST',
+                                        data: {},
+                                        success: function(response1) {
+                                            if (response1.result[0].message == "Record is Successfully Saved") {
+                                                var recid = response1.result[0].receiptId;
+                                                var recNo = response1.result[0].receiptNumber;
+
+                                                $.ajax({
+                                                    url: '/studentselfservice/Login/PaymentProcess' ,
+                                                    type: 'POST',
+                                                    data: { recid: recid, recNo: recNo },
+                                                    success: function(response2) {
+                                                        if (response2.status && response2.redirect) {
+                                                            window.location.href = response2.redirect;
+                                                        } else {
+                                                            console.error("Payment processing failed:", response2.result);
+                                                            alert("Payment processing failed: " + response2.result);
+                                                        }
+                                                    }
+                                                })
+                                            }
+                                        },
+                                    })
+                                }
+
+                            }
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        $("#forgotPasswordLoader1").hide();
+                        // $("#btn_Login").prop("disabled", false);
+                        console.error('Error:', error);
+                        $('#errorMessage').text('An error occurred. Please try again.').show();
+                    }
+                });
+            }
+        });
+
+            // Handle the input and focus behavior
+            // document.querySelectorAll('.checkFilled').forEach((input, index, inputs) => {
+            //     input.addEventListener('input', function() {
+            //         if (this.value.length === this.maxLength && inputs[index + 1]) {
+            //             inputs[index + 1].focus();
+            //         }
+            //     });
+            // });
+
+            // // Handle styling when inputs are filled
+            // document.querySelectorAll('.checkFilled').forEach(input => {
+            //     input.addEventListener('input', function() {
+            //         if (this.value.length === this.maxLength) {
+            //             this.classList.add('filled');
+            //         } else {
+            //             this.classList.remove('filled');
+            //         }
+            //     });
+            // });
+
+            // Toggle New Password visibility
+            $('#toggleNewPassword2').click(function() {
+                var passwordField = $('#txt_NewPasswordchange');
+                var icon = $(this);
+
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text'); // Show password
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye'); // Change icon to 'eye'
+                } else {
+                    passwordField.attr('type', 'password'); // Hide password
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash'); // Change icon to 'eye-slash'
+                }
+            });
+
+            // Toggle Confirm Password visibility
+            $('#toggleConfirmPassword2').click(function() {
+                var passwordField = $('#txt_ConfirmPasswordchange');
+                var icon = $(this);
+
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text'); // Show password
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye'); // Change icon to 'eye'
+                } else {
+                    passwordField.attr('type', 'password'); // Hide password
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash'); // Change icon to 'eye-slash'
+                }
+            });
+
+            // Toggle Confirm Password visibility
+            $('#toggleConfirmPassword3').click(function() {
+                var passwordField = $('#txt_Password');
+                var icon = $(this);
+
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text'); // Show password
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye'); // Change icon to 'eye'
+                } else {
+                    passwordField.attr('type', 'password'); // Hide password
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash'); // Change icon to 'eye-slash'
+                }
+            });
+        });
+
+        document.getElementById("lbl_forgotpassword").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            var loader = document.getElementById("forgotPasswordLoader");
+            let userName = $('#txt_UserName').val();
+            if(!userName){
+                $('.err-username').removeClass('d-none');
+                return;
+            } else{
+                $('.err-username').addClass('d-none');
+            }
+            // Show the loader
+            loader.style.display = "inline-block";
+
+            // Simulate OTP request (Replace with actual AJAX request if needed)
+            setTimeout(function() {
+                loader.style.display = "none"; // Hide the loader after OTP is sent
+                // alert("OTP sent successfully!"); // Replace with actual success message
+            }, 3000); // Simulate 3 seconds delay
+        });
+
+        function Relode() {
+            $.ajax({
+                type: "POST",
+                dataType: "JSON",
+                url: '/studentselfservice/Login/Forgotpassword',
+                data: {
+                    UserName: $("#txt_UserName").val(),
+                },
+                success: function(response) {
+                    $.ajax({
+                        type: "POST",
+                        dataType: "JSON",
+                        url: '/studentselfservice/Login/GetOTPFunctionality1',
+                        data: {
+                            UserName: $("#txt_UserName").val(),
+                            Mobile: mobile,
+                            Email: email
+                        },
+                        success: function(response) {
+                            if (response.status == true) {
+                                otpnumber = response.result;
+                            }
+                        }
+                    })
+                    if (response && response.result1 && response.result1.length > 0) {
+
+                        var Message = response.result1;
+                        grpcode = response.passwordDetailsOTPList[0].grpCode;
+                        colCode1 = response.passwordDetailsOTPList[0].colCode;
+                        collegeId = response.passwordDetailsOTPList[0].collegeId;
+                        userName = response.passwordDetailsOTPList[0].userName;
+                        userType = response.passwordDetailsOTPList[0].userType;
+                        messageInvalid = response.passwordDetailsOTPList[0].message;
+                        email = response.passwordDetailsOTPList[0].email;
+                        mobile = response.passwordDetailsOTPList[0].phoneNumber;
+
+                        if (Message === "OTP sent Successfully") {
+                            $.notify("OTP sent successfully to your email/mobile", {
+                                globalPosition: 'top right',
+                                className: 'success',
+                                title: "Success"
+                            });
+
+                            // Hide the loader after OTP is sent
+                            $("#forgotPasswordOverlay").hide();
+
+                            $("#Otpcard").show();
+                            $("#ForgetPassWordlogin").hide();
+                            $("#logincardconfirm").hide();
+                            $("#loginFormMain").hide();
+
+
+                            var Newemail = "";
+                            var NewMobile = "";
+                            // for (var i = 0; i < email.length; i++) {
+                            //     if (i < 2 || i >= email.length - 10) {
+                            //         Newemail = Newemail + email[i]
+                            //     }
+                            //     else {
+                            //         Newemail = Newemail + '*'
+                            //     }
+                            // }
+                            // for (var i = 0; i < mobile.length; i++) {
+                            //     if (i < 2 || i >= mobile.length - 2) {
+                            //         NewMobile = NewMobile + mobile[i]
+                            //     }
+                            //     else {
+                            //         NewMobile = NewMobile + '*'
+                            //     }
+                            // }
+                                    if (email && email.length) {
+                                        for (let i = 0; i < email.length; i++) {
+                                            if (i < 2 || i >= email.length - 10) {
+                                                Newemail += email[i];
+                                            } else {
+                                                Newemail += '*';
+                                            }
+                                        }
+                                    } else {
+                                        Newemail = `<email doesn't exists>`; // or maybe 'N/A'
+                                    }
+
+                                    if (mobile && mobile.length) {
+                                        for (let i = 0; i < mobile.length; i++) {
+                                            if (i < 2 || i >= mobile.length - 2) {
+                                                NewMobile += mobile[i];
+                                            } else {
+                                                NewMobile += '*';
+                                            }
+                                        }
+                                    } else {
+                                        NewMobile = `<mobile number doesn't exists>`; // or 'N/A'
+                                    }
+                            $("#txt_email").val(Newemail);
+                            $("#txt_mobile").val(NewMobile);
+                            // Set the initial time to 30 seconds
+                            var timeLeft = 45;
+                            // Update the timer every second
+                            var timerInterval = setInterval(function() {
+                                // Decrease the time left by 1 second
+                                timeLeft--;
+                                // Update the timer display
+                                $("#timer").text("Time left: " + timeLeft + " seconds");
+
+                                // If time is up, clear the interval and display a message
+                                if (timeLeft <= 0) {
+                                    clearInterval(timerInterval);
+                                    $("#timer").text("Time's up!");
+                                    $("#btn_resend").show();
+                                    $("#textbox1, #textbox2, #textbox3, #textbox4, #textbox5").val("");
+                                    // $("#btn_OTP").prop('disabled', true);
+                                    // Optionally, you can trigger an action here when the time is up
+                                }
+                            }, 1000); // Execute every 1000 milliseconds (1 second)
+
+                        }
+                        else if (messageInvalid == "Invalid UserName") {
+                            $('#error_usernamemain').text("Invalid UserName");
+
+                            // Hide the loader if there's an invalid username
+                            $("#forgotPasswordOverlay").hide();
+
+                            $("#Otpcard").hide();
+                            $("#ForgetPassWordlogin").hide();
+                            $("#logincardconfirm").hide();
+                            $("#loginFormMain").show();
+                        }
+                    }
+
+                    if (response.result2 && response.result2.length > 0) {
+                        OTP = response.result2;
+                    } else {
+                        console.error("Empty or invalid response result2.");
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    $.notify("An error occurred, please try again later.", {
+                        globalPosition: 'top right',
+                        className: 'error',
+                        title: "Error"
+                    });
+
+                    // Hide the loader if there's an error
+                    $("#forgotPasswordOverlay").hide();
+                }
+            });
+        }
+        function ReloadOtpChangePassword() {
+            var valid = ForGotPasswordValidations();
+            if (valid) {
+                // Collect form data
+                const formData = {
+                    UserName: $('#txt_UserName').val(),
+                    Password: $('#txt_Password').val(),
+                    RememberMe: $('#rememberMe').is(':checked')
+                };
+
+                // Set a flag to indicate user action
+                $("#isUserAction").val("true");
+
+                if (formData.RememberMe) {
+                    // Store credentials in localStorage (Alternatively, you can use cookies)
+                    localStorage.setItem('userName', formData.UserName);
+                    localStorage.setItem('password', formData.Password);
+                } else {
+                    // Remove stored credentials if "Remember Me" is unchecked
+                    localStorage.removeItem('userName');
+                    localStorage.removeItem('password');
+                }
+                Alltextboxesenterchangepassword();
+                $(".checkFilledChangePassword").on("keyup", Alltextboxesenterchangepassword);
+
+                // Make AJAX POST request
+                $.ajax({
+                    url: '/studentselfservice/Login/Login', // Your action URL
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        console.log('Login response:', response);
+                        if (response.success) {
+                            // Redirect if login is successful
+                            window.location.href = response.redirectUrl;
+                        } else {
+                            // Display the error message
+                            $('#span_invalid').text(response.errorMessage).show();
+                            $('#error_mainpwd').text(response.errorMessage).show();
+                            // Additional handling based on 'login' and 'reload' values
+                            if (response.login == 1) {
+                                if (response.reload == "Click") {
+                                    grpCodeOtp = response.otpdetails.grpCodeOtp;
+                                    colCodeOtp = response.otpdetails.colCodeOtp;
+                                    colIdOtp = response.otpdetails.colIdOtp;
+                                    emailOtp = response.otpdetails.emailOtp;
+                                    mobileOtp = response.otpdetails.mobileOtp;
+                                    otpUser = response.otpdetails.otpUser;
+                                    $.ajax({
+                                        type: "POST",
+                                        dataType: "JSON",
+                                        url: '/studentselfservice/Login/GetOTPFunctionalityChangePassword',
+                                        data: {
+                                            GrpCode: grpCodeOtp,
+                                            ColCode: colCodeOtp,
+                                            CollegeId: colIdOtp,
+                                            UserName: otpUser,
+                                            Mobile: mobileOtp,
+                                            Email: emailOtp
+                                        },
+
+                                        success: function(response) {
+                                            if (response.status == true) {
+                                                otpnumber = response.result;
+                                            }
+                                        },
+                                    })
+                                    $("#Otpcard").hide();
+                                    $("#ForgetPassWordlogin").hide();
+                                    $("#logincardconfirm").hide();
+                                    $("#loginFormMain").hide();
+                                    $('#ChangePasswordOtpcard').show();
+                                    var ChangePasswordEmail = "";
+                                    var ChangePasswordMobile = "";
+                                            if (emailOtp && emailOtp.length) {
+                                                for (let i = 0; i < emailOtp.length; i++) {
+                                                    if (i < 2 || i >= emailOtp.length - 10) {
+                                                        ChangePasswordEmail += emailOtp[i];
+                                                    } else {
+                                                        ChangePasswordEmail += '*';
+                                                    }
+                                                }
+                                            } else {
+                                                ChangePasswordEmail = `<email doesn't exists>`; // or maybe 'N/A'
+                                            }
+
+                                            if (mobileOtp && mobileOtp.length) {
+                                                for (let i = 0; i < mobileOtp.length; i++) {
+                                                    if (i < 2 || i >= mobileOtp.length - 2) {
+                                                        ChangePasswordMobile += mobileOtp[i];
+                                                    } else {
+                                                        ChangePasswordMobile += '*';
+                                                    }
+                                                }
+                                            } else {
+                                                ChangePasswordMobile = `<mobile number doesn't exists>`; // or 'N/A'
+                                            }
+                                    $("#txt_changepasswordemail").val(ChangePasswordEmail);
+                                    $("#txt_changepasswordmobile").val(ChangePasswordMobile);
+                                    var timeLeft = 45;
+                                    // Update the timer every second
+                                    var timerInterval = setInterval(function() {
+                                        // Decrease the time left by 1 second
+                                        timeLeft--;
+                                        // Update the timer display
+                                        $("#timer").text("Time left: " + timeLeft + " seconds");
+
+                                        // If time is up, clear the interval and display a message
+                                        if (timeLeft <= 0) {
+                                            clearInterval(timerInterval);
+                                            $("#timer").text("Time's up!");
+                                            $("#btn_resend").show();
+                                            $("#textbox1, #textbox2, #textbox3, #textbox4, #textbox5").val("");
+                                            // $("#btn_OTP").prop('disabled', true);
+                                            // Optionally, you can trigger an action here when the time is up
+                                        }
+                                    }, 1000); // Execute every 1000 milliseconds (1 second)
+
+
+                                    //$('#loginModal').modal('show');
+                                } else if (response.reload == "Reload" || response.reload == "FreshLoad") {
+                                    $('#loginModal').modal('hide');
+                                }
+                            }
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error);
+                        $('#errorMessage').text('An error occurred. Please try again.').show();
+                    }
+                });
+            }
+        }
+        // Forget validation function
+        function forgetvalidation() {
+            let valid = true;
+            const password = $('#ForgetPassWordPassword').val();
+            const confirmPassword = $('#ForgetPassWordConfirmpassword').val();
+
+            // Validate password and confirm password
+            if (!password) {
+                $('#span_forgetPassword').text("Password is required.");
+                valid = false;
+            }
+            else if (password.includes(" ")) {
+                $('#span_forgetPassword').text(" spaces not allowed.");
+                valid = false;
+            }
+            else {
+                $('#span_forgetPassword').text('');
+            }
+
+            if (!confirmPassword) {
+                $('#span_forgetConfirmPassword').text("Confirm Password is required.");
+                valid = false;
+            } else if (confirmPassword.includes(" ")) {
+                $('#span_forgetConfirmPassword').text("spaces not allowed.");
+                valid = false;
+            }
+            else {
+                $('#span_forgetConfirmPassword').text('');
+            }
+
+            // Check if passwords match
+            if (password && confirmPassword && password !== confirmPassword) {
+                $('#span_forgetConfirmPassword').text("Both Passwords must match.");
+                valid = false;
+            }
+
+            return valid;
+        }
+        function usernamevalidation() {
+            let valid = true;
+            const password = $('#txt_UserName').val();
+            // Validate password and confirm password
+            if (!password) {
+                $('#error_usernamemain').text("Username is required.");
+                valid = false;
+            } else {
+                $('#error_usernamemain').text('');
+            }
+            return valid;
+        }
+        function CheckOtp() {
+            enteredOTP = "";
+
+            enteredOTP += document.getElementById("first").value;
+            enteredOTP += document.getElementById("second").value;
+            enteredOTP += document.getElementById("third").value;
+            enteredOTP += document.getElementById("fourth").value;
+            enteredOTP += document.getElementById("fifth").value;
+            enteredOTP += document.getElementById("sixth").value;
+        }
+        function CheckOtpChangePassword() {
+            enteredOTPChangePassword = "";
+
+            enteredOTPChangePassword += document.getElementById("cpfirst").value;
+            enteredOTPChangePassword += document.getElementById("cpsecond").value;
+            enteredOTPChangePassword += document.getElementById("cpthird").value;
+            enteredOTPChangePassword += document.getElementById("cpfourth").value;
+            enteredOTPChangePassword += document.getElementById("cpfifth").value;
+            enteredOTPChangePassword += document.getElementById("cpsixth").value;
+            //  otpnumber = enteredOTPChangePassword//mahesh
+        }
+        function OTPInput() {
+            console.log("OTPInput function called");
+            const inputs = document.querySelectorAll('#otp > *[id]');
+            console.log("Number of inputs found:", inputs.length);
+            for (let i = 0; i < inputs.length; i++) {
+                console.log("Adding event listener for input", i);
+                inputs[i].addEventListener('keydown', function(event) {
+                    console.log("Keydown event triggered on input", i);
+                    if (event.key === "Backspace") {
+                        inputs[i].value = '';
+                        if (i !== 0) inputs[i - 1].focus();
+                    } else {
+                        if (i === inputs.length - 1 && inputs[i].value !== '') {
+                            return true;
+                        } else if (event.keyCode > 47 && event.keyCode < 58) {
+                            inputs[i].value = event.key;
+                            if (i !== inputs.length - 1) inputs[i + 1].focus();
+                            event.preventDefault();
+                        } else if (event.keyCode > 64 && event.keyCode < 91) {
+                            inputs[i].value = String.fromCharCode(event.keyCode);
+                            if (i !== inputs.length - 1) inputs[i + 1].focus();
+                            event.preventDefault();
+                        }
+                    }
+                });
+            }
+        }
+        function Alltextboxesenterchangepassword() {
+            var allFilled = true;
+            // Check if all textboxes have a value
+            $(".checkFilledChangePassword").each(function() {
+                if ($(this).val().trim() === "") {
+                    allFilled = false;
+                    return false; // Exit each loop early if any textbox is empty
+                }
+            });
+            // Enable btn_OTP button if all textboxes are filled
+            if (allFilled) {
+                $("#btn_ChangePasswordOTP").prop("disabled", false);
+            } else {
+                $("#btn_ChangePasswordOTP").prop("disabled", true);
+            }
+        }
+        function Alltextboxesenter() {
+            var allFilled = true;
+            // Check if all textboxes have a value
+            $(".checkFilled").each(function() {
+                if ($(this).val().trim() === "") {
+                    allFilled = false;
+                    return false; // Exit each loop early if any textbox is empty
+                }
+            });
+            // Enable btn_OTP button if all textboxes are filled
+            if (allFilled) {
+                $("#btn_OTP").prop("disabled", false);
+            } else {
+                $("#btn_OTP").prop("disabled", true);
+            }
+        }
+
+        // Function to start the timer
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            var otpTimer;
+
+            function resendOTP() {
+                // Show loading overlay
+                $("#loadingOverlay").removeClass("d-none");
+                // Make an AJAX call to your server to resend OTP
+                $.ajax({
+                    type: "Post",
+                    dataType: "JSON",
+                    url: "/studentselfservice/Login/GetOTPFunctionality",
+                    success: function(response) {
+                        if (response.status == true) {
+                            if (response.result == "OTP sent Your Mobile") {
+                                // $("#txt_UserName1").val($("#txt_UserName").val());
+                                // $("#txt_OTP").val("");
+                                // switchForm("#loginForm", "#otpForm");
+                                // //Add class to btndiv
+                                // $('#btn_Backs').addClass('btndiv');
+                                // // Remove class from btndiv1
+                                // $('#btn_Backs1').removeClass('btndiv1');
+                                // $("#btndiv").show();
+                                // $("#btndiv1").hide();
+                                // $("#btn_Backs").show();
+                                // $("#btn_Backs1").hide();
+                                // $("#timer").show();
+                                // Hide loading overlay on success
+                                $("#loadingOverlay").addClass("d-none");
+                                $.notify(response.result, {
+
+                                    globalPosition: 'top right',
+                                    className: 'success',
+
+                                })
+                                $("#timer").show();
+                                handleOtpSent(); // Start the timer when OTP is sent
+
+                            }
+                            else {
+                                $.notify(response.result, {
+                                    globalPosition: 'top right',
+                                    className: 'success',
+                                })
+                            }
+                        }
+                        else {
+                            $.notify(response.result, {
+                                globalPosition: 'top right',
+                                className: 'success',
+                            })
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                    }
+                });
+            }
+
+            otpTimer = setInterval(function() {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.text(minutes + ":" + seconds);
+
+                if (--timer < 0) {
+                    // Timer reached zero, handle this as needed
+                    clearInterval(otpTimer);
+                    display.text("00:00");
+
+                    // Display an alert with "Resend OTP" option
+                    var userChoice = confirm("OTP has expired. Do you want to resend?");
+                    if (userChoice) {
+                        $("#timer").hide();
+                        // User clicked OK, resend OTP
+                        resendOTP();
+                    } else {
+                        // User clicked Cancel or closed the alert
+                        // Handle as needed, e.g., redirect to login page
+                        window.location.href = "/CoreERP/Login/Index";
+                        //window.location.href = "/Login/Index";
+                    }
+                }
+            }, 1000);
+            otpTimerRunning = true; // Set the flag to indicate that the OTP timer is running
+        }
+
+
+        //-------------------------- Function to stop the timer--------------------//
+        function stopTimer() {
+            clearInterval(otpTimer);
+            $("#timer").text(""); // Clear the timer display
+            otpTimerRunning = false; // Set the flag to indicate that the OTP timer is not running
+        }
+
+        // Function to handle OTP sent to mobile
+        function handleOtpSent() {
+            // ... (your existing code)
+            startTimer(30, $("#timer")); // Start the timer for 5 minutes (300 seconds)
+        }
+
+        // Function to handle OTP submission
+        function handleOtpSubmit() {
+            // ... (your existing code)
+            stopTimer(); // Stop the timer when OTP is submitted
+        }
+
+        // function showNotification() {
+        //     $.notify("OTP has expired. Please request a new OTP.", {
+        //         className: 'error',
+        //         autoHide: true,
+        //         autoHideDelay: 100000, // 15000 milliseconds (15 seconds)
+        //         position: 'top center'
+        //     });
+        // }
+
+        //===================================== Function to switch between forms==============//
+        function switchForm(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function switchForm1(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function switchForm2(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function switchForm3(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        function switchForm4(fromForm, toForm) {
+            $(fromForm).hide();
+            $(toForm).show();
+        }
+        //=====================================Validations==================================//
+        function ForGotPasswordValidations() {
+            var valid = true;
+            var username = $("#txt_UserName").val();
+            var errorTooltip = $("#error_UserName");
+
+            if (!username || username.trim() === "") {
+                valid = false;
+                errorTooltip.text("Enter username.").toggleClass('d-none', false);  // Show error message
+            } else {
+                errorTooltip.text("").toggleClass('d-none', true);  // Hide error message
+            }
+
+            return valid;
+        }
+        function OTPValidations() {
+
+            var valid = true;
+            var otp = $("#txt_OTP").val();
+            var errorTooltip1 = $("#error_OTP");
+
+            if (!otp || otp.trim() === "") {
+                valid = false;
+                errorTooltip1.text("Enter OTP.").show();  // Show error message
+            } else {
+                errorTooltip1.text("").show("");     // Hide error message
+            }
+
+            return valid;
+        }
+        function ChangepasswordValidations() {
+            var valid = true;
+            var NewValue = $("#txt_NewPassword").val();
+            var ConfirmValue = $("#txt_ConfirmPassword").val();
+            var error_New_Password = $("#error_NewPassword");
+            var error_Confirm_Password = $("#error_ConfirmPassword");
+
+            if (!NewValue || NewValue.trim() === "") {
+                valid = false;
+                error_New_Password.text("Enter New Password").show();
+            } else {
+                error_New_Password.text("").hide();
+            }
+
+            if (!ConfirmValue || ConfirmValue.trim() === "") {
+                valid = false;
+                error_Confirm_Password.text("Enter Confirm Password").show();
+            } else {
+                error_Confirm_Password.text("").hide();
+                if (NewValue !== ConfirmValue) {
+                    valid = false;
+                    error_Confirm_Password.text("Confirm Password does not match New Password ").show();
+                } else {
+                    error_Confirm_Password.text("").hide();
+                }
+            }
+
+            return valid;
+        }
+
+
+        function ChangepasswordValidations1() {
+            var valid = true;
+            var NewValue = $("#txt_NewPasswordchange").val();
+            var ConfirmValue = $("#txt_ConfirmPasswordchange").val();
+            var error_New_Password = $("#error_NewPasswordchange");
+            var error_Confirm_Password = $("#error_ConfirmPasswordchange");
+
+            if (!NewValue || NewValue.trim() === "") {
+                valid = false;
+                error_New_Password.text("Enter New Password").show();
+            } else {
+                error_New_Password.text("").hide();
+            }
+
+            if (!ConfirmValue || ConfirmValue.trim() === "") {
+                valid = false;
+                error_Confirm_Password.text("Enter Confirm Password").show();
+            } else {
+                error_Confirm_Password.text("").hide();
+                if (NewValue !== ConfirmValue) {
+                    valid = false;
+                    error_Confirm_Password.text("Confirm Password does not match New Password ").show();
+                } else {
+                    error_Confirm_Password.text("").hide();
+                }
+            }
+
+            return valid;
+        }
+
+        function togglePasswordVisibility() {
+            passwordInput = document.getElementById("txt_password");
+            eyeIcon = document.getElementById("eye-icon");
+            eyciconcode();
+        }
+        function togglePasswordVisibility1() {
+            passwordInput = document.getElementById("txt_password1");
+            eyeIcon = document.getElementById("eye-icon1");
+            eyciconcode();
+        }
+        function togglePasswordVisibility2() {
+            passwordInput = document.getElementById("txt_passwordconfirm");
+            eyeIcon = document.getElementById("eye-icon2");
+            eyciconcode();
+        }
+
+    </script>
+
+    <script>
+        //=======================Toggle the Eye password==================================//
+        $("body").on('click', '.toggle-password', function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $("#txt_Password");
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+        $("body").on('click', '.toggle-password1', function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input1 = $("#txt_NewPassword")
+            if (input1.attr("type") === "password") {
+                input1.attr("type", "text");
+            } else {
+                input1.attr("type", "password");
+            }
+        });
+        $("body").on('click', '.toggle-password2', function() {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input2 = $("#txt_ConfirmPassword")
+            if (input2.attr("type") === "password") {
+                input2.attr("type", "text");
+            } else {
+                input2.attr("type", "password");
+            }
+
+        });
+
+        $(document).on('click', '#edit-email, #edit-mobile', function(event){
+            let targetInput;
+
+            if (this.id === 'edit-email') {
+                targetInput = $('#txt_changepasswordemail');
+                $('#txt_changepasswordemail').val(emailOtp);
+                $('#edit-email').hide();
+                $('#save-email, #cancel-email').show();
+
+            } else if (this.id === 'edit-mobile') {
+                targetInput = $('#txt_changepasswordmobile');
+                $('#txt_changepasswordmobile').val(mobileOtp);
+                $('#edit-mobile').hide();
+                $('#save-mobile, #cancel-mobile').show();
+
+            }
+
+            if (targetInput) {
+                targetInput.removeAttr('disabled').focus();
+            }
+        });
+
+        $(document).on('click', '#cancel-email, #cancel-mobile', function(){
+            if (this.id === 'cancel-email') {
+                targetInput = $('#txt_changepasswordemail');
+                $('#edit-email').show();
+                $('#save-email, #cancel-email').hide();
+                $('#err-email').text('');
+                $('#txt_changepasswordemail').val(emailOtp);
+            }else{
+                targetInput = $('#txt_changepasswordmobile');
+                $('#edit-mobile').show();
+                $('#save-mobile, #cancel-mobile').hide();
+                $('#err-mobile').text('');
+                $('#txt_mobile').val(mobile);
+                $('#txt_changepasswordmobile').val(mobileOtp);
+            }
+
+            if (targetInput) {
+                targetInput.prop('disabled', true);
+            }
+        })
+        //------------------------------------------------------------------------
+        $(document).on('click', '#edit-email2, #edit-mobile2', function(event){
+            let targetInput;
+
+            if (this.id === 'edit-email2') {
+                targetInput = $('#txt_email');
+                $('#txt_email').val(email);
+                $(this).hide();
+                $('#save-email2, #cancel-email2').show();
+            } else if (this.id === 'edit-mobile2') {
+                targetInput = $('#txt_mobile');
+                $('#txt_mobile').val(mobile);
+                $(this).hide();
+                $('#save-mobile2, #cancel-mobile2').show();
+            }
+
+            if (targetInput) {
+                targetInput.removeAttr('disabled').focus();
+            }
+        });
+
+        $(document).on('click', '#cancel-email2, #cancel-mobile2', function(){
+            if (this.id === 'cancel-email2') {
+                targetInput = $('#txt_email');
+                $('.edit-email2').show();
+                $('.save-email2, .cancel-email2').hide();
+                $('#err-email2').text('');
+                $('#txt_email').val(email);
+            }else{
+                targetInput = $('#txt_mobile');
+                $('.edit-mobile2').show();
+                $('.save-mobile2, .cancel-mobile2').hide();
+                $('#err-mobile2').text('');
+                $('#txt_mobile').val(mobile)
+            }
+
+            if (targetInput) {
+                targetInput.prop('disabled', true);
+            }
+        })
+        let isProgrammaticClick = [];
+        //----------------------------------------------- Forgot Password
+        $(document).on('click', '#save-email2, #save-mobile2', function(){
+            if (isProgrammaticClick.length > 1) window.location.reload();
+            let mobileVal, emailVal, flag;
+            let targetElement = this.id;
+            if(targetElement === 'save-mobile2'){
+                mobileVal = $('#txt_mobile').val();
+                flag = 'mobile2'
+            } else if(targetElement === 'save-email2') {
+                emailVal = $('#txt_email').val();
+                flag = 'email2'
+            }
+            let isValid = ValidateFields(mobileVal, emailVal, flag);
+            if(isValid){
+                $.ajax({
+                    url: "/studentselfservice/Login/Login_SaveEmailMobile",
+                    type: 'post',
+                    dataType: 'json',
+                    data:{
+                        Mobile: targetElement === 'save-mobile2' ? $('#txt_mobile').val() : '',
+                        Email: targetElement === 'save-email2' ? $('#txt_email').val() : ''
+                    },
+                    success: function(response){
+                        if(response.result != ''){
+                            if( targetElement === 'save-mobile2' ){
+                                $('.edit-mobile2').show();
+                                $('.save-mobile2, .cancel-mobile2').hide();
+                                showConfirmPopup(
+                                    "Would you like to update the email as well? The mobile number and email can be changed only during the first-time login from this screen.",
+                                    () => {
+                                        isProgrammaticClick.push("mobile");
+                                        $("#edit-email2").trigger("click");
+                                        setTimeout(() => 100);
+                                    },
+                                    () => {
+                                        window.location.reload()
+                                    }
+                                );
+                            } else{
+                                $('.edit-email2').show();
+                                $('.save-email2, .cancel-email2').hide();
+                                showConfirmPopup(
+                                    "Would you like to update the mobile number as well? The mobile number and email can be changed only during the first-time login from this screen.",
+                                    () => {
+                                        isProgrammaticClick.push("email");
+                                        $("#edit-mobile2").trigger("click");
+                                        setTimeout(() => 100);
+                                    },
+                                    () => {
+                                        window.location.reload()
+                                    }
+                                );
+                            }
+                        }
+                    },
+                    error: function(error, xhr){
+                        console.log(xhr, error)
+                    }
+                });
+            }
+        });
+
+        //------------------------- First time Login Change Password
+        $(document).on('click', '#save-email, #save-mobile', function(){
+            let mobileVal, emailVal, flag;
+            let targetElement = this.id;
+            if(targetElement === 'save-mobile'){
+                mobileVal = $('#txt_changepasswordmobile').val();
+                flag = 'mobile'
+            } else if(targetElement === 'save-email') {
+                emailVal = $('#txt_changepasswordemail').val();
+                flag = 'email'
+            }
+            let isValid = ValidateFields(mobileVal, emailVal, flag);
+            if (isProgrammaticClick.length > 1) window.location.reload();
+            if(isValid){
+                $.ajax({
+                    url: "/studentselfservice/Login/FirstTimeLogin_SaveEmailMobile",
+                    type: 'post',
+                    dataType: 'json',
+                    data:{
+                        Mobile: targetElement === 'save-mobile' ? $('#txt_changepasswordmobile').val() : '',
+                        Email: targetElement === 'save-email' ? $('#txt_changepasswordemail').val() : ''
+                    },
+                    success: function(response){
+                        if(response.result != ''){
+                            if( targetElement === 'save-mobile' ){
+                                $('.edit-mobile').show();
+                                $('.save-mobile, .cancel-mobile').hide();
+                                showConfirmPopup(
+                                     "Would you like to update the email as well? The mobile number and email can be changed only during the first-time login from this screen.",
+                                     () => {
+                                        isProgrammaticClick.push("mobile");
+                                        $("#edit-email").trigger("click");
+                                        setTimeout(() => 100);
+                                    },
+                                    () => {
+                                        window.location.reload()
+                                    }
+                                );
+                            } else{
+                                $('.edit-email').show();
+                                $('.save-email, .cancel-email').hide();
+                                showConfirmPopup(
+                                    "Would you like to update the mobile number as well? The mobile number and email can be changed only during the first-time login from this screen.",
+                                    () => {
+                                        isProgrammaticClick.push("email");
+                                        $("#edit-mobile").trigger("click");
+                                        setTimeout(() => 100);
+                                    },
+                                    () => {
+                                        window.location.reload()
+                                    }
+                                );
+                            }
+                        }
+                    },
+                    error: function(error, xhr){
+                        console.log(xhr, error)
+                    }
+                });
+            }
+        });
+
+        function ValidateFields(mobileVal, emailVal, flag){
+            let isValid = true;
+            if(flag.includes('mobile')){
+                const phoneRegex = /^[6-9]\d{9}$/;
+                if (!phoneRegex.test(mobileVal)) {
+                    console.log("Invalid phone number");
+                    if(flag.includes('mobile2')){
+                        $('#err-mobile2').text('invalid mobile number');
+                    } else{
+                        $('#err-mobile').text('invalid mobile number');
+                    }
+                    isValid = false;
+                }
+            }
+            else if (flag.includes('email') ){
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailVal || emailVal.trim() === "") {
+                    console.log("Email is required");
+                    if(flag.includes('email2')){
+                        $('#err-email2').text('please enter email');
+                    } else{
+                        $('#err-email').text('please enter email');
+                    }
+                    isValid = false;
+                } else if (!emailRegex.test(emailVal)) {
+                    if(flag.includes('email2')){
+                        $('#err-email2').text('invalid email');
+                    } else{
+                        $('#err-email').text('invalid email');
+                    }
+                    isValid = false;
+                }
+            }
+            return isValid;
+        }
+
+        $(document).on('keyup', '.checkFilled, .checkFilledChangePassword', function (e) {
+            // allow only numbers (0–9)
+            this.value = this.value.replace(/[^0-9]/g, '');
+
+            let $inputs = $(this).closest('div').find('.checkFilled, .checkFilledChangePassword');
+            let index = $inputs.index(this);
+
+            // move to next input if a number is entered
+            if (this.value.length === 1 && index < $inputs.length - 1) {
+                $inputs.eq(index + 1).focus();
+            }
+
+            // move back on backspace if box is empty
+            else if (e.key === 'Backspace' && index > 0 && this.value.length === 0) {
+                $inputs.eq(index - 1).focus();
+            }
+        });
+
+        // logic to show the popup for user confirmation
+        function showConfirmPopup(message, onYes, onNo) {
+            const overlay = document.getElementById("confirmPopup-overlay");
+            const msg = document.getElementById("confirmPopup-message");
+            const yesBtn = document.getElementById("confirmPopup-yes");
+            const noBtn = document.getElementById("confirmPopup-no");
+
+            msg.textContent = message || "Are you sure?";
+            overlay.style.display = "flex";
+
+            yesBtn.onclick = function () {
+              overlay.style.display = "none";
+              if (onYes) onYes();
+            };
+
+            noBtn.onclick = function () {
+              overlay.style.display = "none";
+              if (onNo) onNo();
+            };
+        }
+
+    </script>
+    <script>
+        $('.toggle-password').on('click', function () {
+            const input = $(this).siblings('input');
+            const isPassword = input.attr('type') === 'password';
+
+            input.attr('type', isPassword ? 'text' : 'password');
+            $(this).toggleClass('fa-eye fa-eye-slash');
+        })
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

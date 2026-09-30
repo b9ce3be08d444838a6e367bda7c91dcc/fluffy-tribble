@@ -1,0 +1,25 @@
+{
+  "name": "fluffy-tribble",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b9ce3be08d444838a6e367bda7c91dcc/fluffy-tribble.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/b9ce3be08d444838a6e367bda7c91dcc/fluffy-tribble/issues"
+  },
+  "homepage": "https://github.com/b9ce3be08d444838a6e367bda7c91dcc/fluffy-tribble#readme",
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "playwright": "^1.63.0"
+  }
+}

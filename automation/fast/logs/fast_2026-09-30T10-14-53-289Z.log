@@ -1,0 +1,15 @@
+[2026-09-30T10:14:53.635Z] FAST RUN START roll=237Z1A05A5 full=false
+[2026-09-30T10:14:54.703Z] RAW 01_login_page (143021 chars)
+[2026-09-30T10:14:57.151Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/ValidateCaptcha | body={"status":true,"message":"Captcha verified"}
+[2026-09-30T10:14:57.158Z] VERIFY attempt 1 sol=U7N45Z http=200 invalid=false hidden=true
+[2026-09-30T10:14:57.667Z] RAW 06_after_verification_attempt1 (143071 chars)
+[2026-09-30T10:14:57.668Z] CAPTCHA ACCEPTED: U7N45Z
+[2026-09-30T10:14:58.021Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/Forgotpassword | body={"data":"OZ8k31mVn7yLYk7L7/Db9mSM/ovqnRprajBkRf044qRSKlWRtsp6ZH6TWc/WTCCRZU3/Z\u002B7TItQ3\u002BZBqUuk4VpY8JzBbSF666aeeB/IStA4t5QvN76F2DWHIay7KrEwlWKp/Qil5xJM644WMf57NMqwbTBgLtB4qaEQKkldoB2TFnIIQmRpiEQAtryJFx5L\u002B2B6DiYN6bsdeVhwr/qXvl3Pz8lS5PFV7gZNixHUAzHNyZXkXiYpTbjwsa6zwesGyG4icCjz6UHGxStrdJoxgPl14qpmrCpJuY9g36W6lIXCiW20Qu/32L9YLTYEb0MfpXiRUb6Np79\u002BuhZc/y4IhnpysfSetQdBQhN1cvgMYwbTWKDI0xGIbIPSPyBHiltoLtlZh97rN3a1c1t2Y3dzz7pLerFZNjUU4G29jspypY3\u002B1w0NLDGLpxYyJzjs2OeXDniWNtL9J8qKTnHGhFsJEA5xdnaiIdwLlqFwAe0bFZ/nKIGYZ2CbZs4u0rgM032wMYCN\u002B4JfXTMTWogz4P/RUGIipeyOFO7Ta\u002B2B0dEd7jvfyy42N7Du1l7uDlgxtLeiDAswHM6NIE7MUZoIxvF7d5Sf3wfBUoVc2L\u002BI\u002BxZLv6Hs="}
+[2026-09-30T10:14:58.794Z] RAW 07_otp_screen (143415 chars)
+[2026-09-30T10:14:58.859Z] EMAIL copied="msudhindragoud@gmail.com"
+[2026-09-30T10:14:59.077Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/Login_SaveEmailMobile | body={"status":true,"result":"Record is Successfully Saved"}
+[2026-09-30T10:14:59.549Z] MOBILE copied="9177323290"
+[2026-09-30T10:14:59.901Z] RES 200 https://nnrg.beessoftware.cloud/studentselfservice/Login/Login_SaveEmailMobile | body={"status":true,"result":"Record is Successfully Saved"}
+[2026-09-30T10:15:01.407Z] RAW 16_final_login_screen (143021 chars)
+[2026-09-30T10:15:01.433Z] FINAL loginVisible=true
+[2026-09-30T10:15:01.438Z] RUN END result=OK in 8.1s
